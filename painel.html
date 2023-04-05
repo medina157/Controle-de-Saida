@@ -1,12 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="mural.css">
+    <link rel="shortcut icon" href="Img/Logo P.png" >
+    <title>Mural de Monitoramento</title>
 </head>
 <body>
-    <p>Logado</p>
+
+  <div id="time">
+    <div class="circle" style="--clr:#ff2972;">
+        <div class="dot hora_dot"></div>
+        <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70" id="hh"></circle>
+        </svg>
+        <div id="hora">00</div>
+    </div>
+    <div class="circle" style="--clr:#fee800;">
+        <div class="dot min_dot"></div>
+        <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70" id="mm"></circle>
+        </svg>
+        <div id="minuto">00</div>
+    </div>
+    <div class="circle" style="--clr:#04fc43;">
+        <div class="dot seg_dot"></div>
+        <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70" id="ss"></circle>
+        </svg>
+        <div id="segundo">00</div>
+    </div>
+    <div class="ap">
+        <div id="ampm">PM</div>
+    </div>
+</div>
+<header>
+  <h1>Monitoramento de Atividades</h1>
+</header>
+
+	<div class="dashboard">
+		<div class="card">
+			<h2>Caio</h2>
+			<p>Está na Escola Digital!</p>
+      <p class="hora">12:30hrs
+      <img src="img/lata-de-lixo.png" alt="">
+    </p>
+		</div>
+		<div class="card">
+			<h2>Aviso 2</h2>
+			<p>Este é o segundo aviso.</p>
+      <p class="hora">12:30hrs
+        <img src="img/lata-de-lixo.png" alt="">
+      </p>
+		</div>
+		<div class="card">
+			<h2>Aviso 3</h2>
+			<p>Este é o terceiro aviso.</p>
+      <p class="hora">12:30hrs
+        <img src="img/lata-de-lixo.png" alt="">
+      </p>
+		</div>
+		<div class="card">
+			<h2>Aviso 4</h2>
+			<p>Este é o quarto aviso.</p>
+      <p class="hora">12:30hrs
+        <img src="img/lata-de-lixo.png" alt="">
+      </p>
+		</div>
+		<div class="card">
+			<h2>Aviso 5</h2>
+			<p>Este é o quinto aviso.</p>
+      <p class="hora">12:30hrs
+        <img src="img/lata-de-lixo.png" alt="">
+      </p>
+		</div>
+		<div class="card">
+			<h2>Aviso 5</h2>
+			<p>Este é o quinto aviso.</p>
+      <p class="hora">12:30hrs
+        <img src="img/lata-de-lixo.png" alt="">
+      </p>
+		</div>
+	</div>
+
+  <script>
+    const cardsContainer = document.getElementById("cards-container");
+const colors = ["even", "odd"];
+
+for (let i = 0; i < 10; i++) {
+  const card = document.createElement("div");
+  card.classList.add("card", `card-${colors[i % 2]}`);
+  card.textContent = `Card ${i + 1}`;
+  cardsContainer.appendChild(card);
+}
+
+  </script>
+
+  <script src="js/relogio.js"></script>
 </body>
 </html>
