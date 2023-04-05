@@ -1,4 +1,5 @@
-import { initializeApp, getAuth } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"
 
  // Your web app's Firebase configuration
  const firebaseConfig = {
@@ -15,7 +16,6 @@ import { initializeApp, getAuth } from "https://www.gstatic.com/firebasejs/9.17.
   
   /* Constantes necessárias para utilização dos métodos do Firebase que serão exportadas em outros arquivos. */
 export const auth = getAuth(app)
-export const db = getFirestore(app)
 
 
   
