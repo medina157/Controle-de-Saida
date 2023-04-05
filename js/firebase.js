@@ -12,6 +12,11 @@ import { initializeApp, getAuth } from "firebase/app";
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
+  
+  /* Constantes necessárias para utilização dos métodos do Firebase que serão exportadas em outros arquivos. */
+export const auth = getAuth(app)
+export const db = getFirestore(app)
+
 
   
 
