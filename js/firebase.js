@@ -1,4 +1,4 @@
-import { initializeApp, getAuth } from "firebase/app";
+import { initializeApp, getAuth } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
 
  // Your web app's Firebase configuration
  const firebaseConfig = {
