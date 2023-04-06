@@ -20,19 +20,22 @@ body {
 }
 
 .title{
-    color:rgb(255, 255, 255);
-   text-align: center;
-   margin-bottom: 25%;
-   position: absolute;
+    display: block;
+    font-family: "Poppins";
+    font-size: 39px;
+    color: #f58634;
+    line-height: 1.2;
+    text-align: center;
+  }
 
-}
+
 main.container {
     background: white;
     min-width: 320px;
-    min-height: vh;
     padding: 2rem;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 40%;
     border-radius: 8px;
+    margin-right: 50%;
     
 
 }

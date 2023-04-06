@@ -12,7 +12,10 @@ document.getElementById("registrarsaida").addEventListener("click", function(){
         nome: nomefuncionario, 
         departamento: departamento,
         hora:horario
+        
+        
     });
 
-
+  
+        
 })

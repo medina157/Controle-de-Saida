@@ -10,7 +10,7 @@ document.getElementById("login").addEventListener("click", () => {
     signInWithEmailAndPassword(autenticacao, email, senha)
         .then((userCredential) => {
        
-            window.location.href = "./painel.html"
+            window.location.href = "./form.html"
 
         })
         .catch((error) => {
