@@ -12,3 +12,4 @@ ptexto.setAttribute("class", "ptexto")
 let phora = document.createElement("p")
 phora.setAttribute("class", "hora")
 
+let img = document.createElement("img")
