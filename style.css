@@ -79,6 +79,7 @@ form .input-field:first-child, main .input-field:first-child {
     background: rgba(0, 0, 0, 0.2);
 }
 
+
 .input-field .underline::after {
     content: '';
     position: absolute;
