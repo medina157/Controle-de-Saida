@@ -9,7 +9,7 @@ document.getElementById("login").addEventListener("click", () => {
     const autenticacao = getAuth()
     signInWithEmailAndPassword(autenticacao, email, senha)
         .then((userCredential) => {
-            alert("[SUCESSO] E-mail autenticado com sucesso.")
+       
             window.location.href = "./painel.html"
 
         })
