@@ -34,9 +34,10 @@ const arrayDocumentos = await getDocs(colecao)
         card.append(h2, ptexto, phora, img)
         dashboard.append(card)
 
-      
+        removermensagem()
+        function removermensagem(){
+            document.getElementById("semregistros").remove()
+        }
+    
     });
-    removermensagem()
-    function removermensagem(){
-        document.getElementById("semregistros").remove()
-    }
+ 
