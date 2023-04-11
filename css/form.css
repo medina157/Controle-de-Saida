@@ -5,14 +5,15 @@
         padding: 0;
         box-sizing: border-box;
         font-family: 'poppins';
-        background-image: url(../img/zyro-image.png);
+        background-image: url(https://static.vecteezy.com/system/resources/previews/003/557/256/non_2x/abstract-blue-and-orange-wave-business-background-free-vector.jpg);
         background-size: cover;
         background-repeat: no-repeat;
     }
     
     header img{
-        width: 200px;
-        margin-left: 42%;
+       padding: 30px;
+        width: 220px;
+        margin-left: 2%;
         
         
     }
@@ -22,11 +23,9 @@
     }
     .container{
         width: 30%;
-        background-color: white;
-        border-radius: 10px;
         margin: 0 auto;
         justify-content: center;
-        margin-top: 15%;
+        margin-top: 5%;
         
     }
 
@@ -66,10 +65,10 @@ input[type="text"]:focus, input[type="time"]:focus {
 
 
 .btn{
-    width: 50%;
+    width: 100%;
     padding: 10px;
     align-self: center;
-    background-color: #007bff;
+    background-color:#1E428D;
     border: none;
     border-radius: 20px;
     color: white;
