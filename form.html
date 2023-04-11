@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="Img/Logo P.png" >
   <link rel="stylesheet" href="css/form.css">
+  
 
   <title>Registrar Saída</title>
 </head>
@@ -19,6 +20,8 @@
 <div>
   <input id="nome" type="text" class="input">
   <label class="labelInput">Nome</label>
+  <img src="img/lupa.png" onclick="abrirModal()" width="15" height="15" style="margin-left:  27vw; margin-top: -23px;" >
+
 </div>
 <div>
   <input id="departamento"  type="text" class="input">
@@ -33,12 +36,60 @@
    Registrar
   </button>
 </div>
-
-
-
-
-
 </div>
+
+<div id="modalFuncionarios" class="modal">
+  <div class="modal-content">
+      <h2>Lista de Funcionários</h2>
+      <input id="inputBusca" class="input-busca" type="text" placeholder="Buscar funcionário...">
+      <ul id="listaFuncionarios" class="funcionarios-list">
+          <li class="funcionarios-list-item" onclick="selecionarFuncionario(1)">Funcionário 1</li>
+          <li class="funcionarios-list-item" onclick="selecionarFuncionario(2)">Funcionário 2</li>
+          <li class="funcionarios-list-item" onclick="selecionarFuncionario(3)">Funcionário 3</li>
+          <li class="funcionarios-list-item" onclick="selecionarFuncionario(4)">Funcionário 4</li>
+          <li class="funcionarios-list-item" onclick="selecionarFuncionario(5)">Isa</li>
+      </ul>
+      <button onclick="fecharModal()">Fechar</button>
+  </div>
+</div>
+
+<script>
+  // Função para abrir o modal
+  function abrirModal() {
+      document.getElementById('modalFuncionarios').style.display = 'block';
+  }
+
+  // Função para fechar o modal
+  function fecharModal() {
+      document.getElementById('modalFuncionarios').style.display = 'none';
+  }
+
+  // Função para selecionar um funcionário
+  function selecionarFuncionario(idFuncionario) {
+      // Aqui você pode fazer o que desejar com o ID do funcionário selecionado
+      console.log('Funcionário selecionado:', idFuncionario);
+      // Fechar o modal após selecionar o funcionário
+      fecharModal();
+  }
+
+  // Função para buscar funcionários na lista
+  function buscarFuncionarios() {
+      var inputBusca = document.getElementById('inputBusca');
+      var filter = inputBusca.value.toUpperCase(); // Obter o valor do campo de busca e converter para maiúsculas
+            var listaFuncionarios = document.getElementById('listaFuncionarios');
+            var funcionarios = listaFuncionarios.getElementsByTagName('li'); // Obter os elementos de lista de funcionários
+
+            // Loop para percorrer a lista de funcionários e ocultar/mostrar com base na busca
+            for (var i = 0; i < funcionarios.length; i++) {
+                var nomeFuncionario = funcionarios[i].innerText;
+                if (nomeFuncionario.toUpperCase().indexOf(filter) > -1) {
+                    funcionarios[i].style.display = '';
+                } else {
+                    funcionarios[i].style.display = 'none';
+                }
+            }
+        }
+  </script>
 
 <script src="js/CadSaida.js" type="module"></script>
 </body>
