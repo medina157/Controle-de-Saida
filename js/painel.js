@@ -38,13 +38,18 @@ const arrayDocumentos = await getDocs(colecao)
        // document.getElementById("lixeira").addEventListener("click", async() =>{
         //   await deleteDoc(doc(db, "funcionarios",));
      //   })
-        
-           
+
+     
+     setTimeout(() => {
+        removermensagem()
+    }, 0);
+
     
+     
     });
 
 
-    function removermensagem(){
+  function removermensagem(){
         document.getElementById("semregistros").remove()
-    }
-    removermensagem()
+}
+    
