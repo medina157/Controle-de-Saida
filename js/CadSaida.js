@@ -8,6 +8,7 @@ document.getElementById("registrarsaida").addEventListener("click", function(){
     let horario = document.getElementById("horario").value
     alert(`${nomefuncionario} ${departamento} ${horario}`)
 
+
     addDoc(collection(db, "funcionario"), {
         nome: nomefuncionario, 
         departamento: departamento,
@@ -16,6 +17,7 @@ document.getElementById("registrarsaida").addEventListener("click", function(){
         
     });
 
-  
+   
+
         
 })

@@ -1,6 +1,6 @@
 import { db } from "../js/firebase.js";
 
-import { getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { getDocs, collection, query, where,deleteDoc, doc} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
 let dashboard = document.getElementById("dashboard")
@@ -10,8 +10,6 @@ const arrayDocumentos = await getDocs(colecao)
 
 
     arrayDocumentos.forEach(doc => {
-
-        
 
         let card = document.createElement("div")
         card.setAttribute("class", "card")
@@ -29,15 +27,24 @@ const arrayDocumentos = await getDocs(colecao)
         phora.innerHTML = doc.get("hora")
         
         let img = document.createElement("img")
+        img.setAttribute("id", "lixeira")
         img.src = "../img/lata-de-lixo.png"
         
         card.append(h2, ptexto, phora, img)
         dashboard.append(card)
 
-        removermensagem()
-        function removermensagem(){
-            document.getElementById("semregistros").remove()
-        }
+       
+  
+       // document.getElementById("lixeira").addEventListener("click", async() =>{
+        //   await deleteDoc(doc(db, "funcionarios",));
+     //   })
+        
+           
     
     });
- 
+
+
+    function removermensagem(){
+        document.getElementById("semregistros").remove()
+    }
+    removermensagem()
