@@ -1,6 +1,6 @@
 import { db } from "../js/firebase.js";
 
-import { getDocs, collection,  doc, deleteDoc} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { getDocs, collection, query, where,deleteDoc, doc} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
 let dashboard = document.getElementById("dashboard")
@@ -27,17 +27,33 @@ const arrayDocumentos = await getDocs(colecao)
         phora.innerHTML = doc.get("hora")
         
         let img = document.createElement("img")
+        
+        img.setAttribute("id", "lixeira")
+
+        const image = document.getElementById('lixeira');
+        img.addEventListener('click', () => {
+        // Recupere a referência para o nó do Firebase que você deseja excluir
+        const databaseRef = firebase.database().ref('');
+  
+    // Chame o método `remove()` na referência para excluir os dados do Firebase
+        databaseRef.remove()
+        .then(() => console.log('Dados excluídos com sucesso!'))
+        .catch(error => console.error(error));
+});
         img.src = "../img/lata-de-lixo.png"
         
         card.append(h2, ptexto, phora, img)
         dashboard.append(card)
 
-        if (document.body.innerHTML.trim().length === 0) {
-            document.getElementById("empty-message").style.display = "block";
-          }
-          
-     
-    });
- 
+       
+  
+       // document.getElementById("lixeira").addEventListener("click", async() =>{
+        //   await deleteDoc(doc(db, "funcionarios",));
+     //   })
 
-    
+
+    // esconde a mensagem
+    document.querySelector('.mensagem').style.display = 'none';
+  
+});
+

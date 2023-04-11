@@ -472,4 +472,9 @@ form input[type="submit"]:hover {
     left: 0;
   }
 
+  .mensagem {
+    display: block; /* a mensagem é mostrada por padrão */
+  }
+  
+
 
