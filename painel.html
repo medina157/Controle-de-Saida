@@ -9,9 +9,12 @@
     <title>Mural de Monitoramento</title>
 </head>
 <body>
+  <header>
+    <img class="logo" src="img/logo600x80.png" alt="">
+</header>
 
   <div id="time">
-    <div class="circle" style="--clr:#ff2972;">
+    <div class="circle" style="--clr:#da0a0a;">
         <div class="dot hora_dot"></div>
         <svg>
             <circle cx="70" cy="70" r="70"></circle>
@@ -19,7 +22,7 @@
         </svg>
         <div id="hora">00</div>
     </div>
-    <div class="circle" style="--clr:#fee800;">
+    <div class="circle" style="--clr:#fe8300;">
         <div class="dot min_dot"></div>
         <svg>
             <circle cx="70" cy="70" r="70"></circle>
@@ -27,7 +30,7 @@
         </svg>
         <div id="minuto">00</div>
     </div>
-    <div class="circle" style="--clr:#04fc43;">
+    <div class="circle" style="--clr:#130e93;">
         <div class="dot seg_dot"></div>
         <svg>
             <circle cx="70" cy="70" r="70"></circle>
@@ -56,6 +59,7 @@
 <p id="semregistros">Não há registros feitos por enquanto</p>
 		
 	</div>
+ 
 
   <script>
     const cardsContainer = document.getElementById("cards-container");
