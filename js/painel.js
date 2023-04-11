@@ -32,10 +32,12 @@ const arrayDocumentos = await getDocs(colecao)
         card.append(h2, ptexto, phora, img)
         dashboard.append(card)
 
-    
+        if (document.body.innerHTML.trim().length === 0) {
+            document.getElementById("empty-message").style.display = "block";
+          }
+          
      
     });
-
-
+ 
 
     

@@ -8,6 +8,14 @@ document.getElementById("registrarsaida").addEventListener("click", function(){
     let horario = document.getElementById("horario").value
     alert(`${nomefuncionario} ${departamento} ${horario}`)
 
+  //  const confirmar = getAuth()
+ //   collection, addDoc(confirmar, nome, departamento, horario)
+     //   .then((userCredential) => {
+       
+        //    window.location.href = "./painel.html"
+
+     //   })
+
     addDoc(collection(db, "funcionario"), {
         nome: nomefuncionario, 
         departamento: departamento,
