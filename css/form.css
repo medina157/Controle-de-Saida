@@ -102,8 +102,10 @@ input[type="text"]:focus, input[type="time"]:focus {
 .login-form-btn:hover  {
   background-color: var(--highligth-text);
 }
-  /* Estilos de exemplo para o modal */
-  .modal {
+
+
+   /* Estilos de exemplo para o modal */
+   .modal {
     display: none;
     position: fixed;
     top: 0;

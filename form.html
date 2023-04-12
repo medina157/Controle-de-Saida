@@ -20,7 +20,7 @@
 <div>
   <input id="nome" type="text" class="input">
   <label class="labelInput">Nome</label>
-  <img src="img/lupa.png" onclick="abrirModal()" width="15" height="15" style="margin-left:  27vw; margin-top: -23px;" >
+  <img src="img/lupa.png" onclick="openModal()" width="15" height="15" style="margin-left:  27vw; margin-top: -23px;" >
 
 </div>
 <div>
@@ -36,60 +36,74 @@
    Registrar
   </button>
 </div>
-</div>
-
-<div id="modalFuncionarios" class="modal">
+</div> 
+ 
+<!-- Modal -->
+<div id="modal" class="modal">
   <div class="modal-content">
-      <h2>Lista de Funcionários</h2>
-      <input id="inputBusca" class="input-busca" type="text" placeholder="Buscar funcionário...">
-      <ul id="listaFuncionarios" class="funcionarios-list">
-          <li class="funcionarios-list-item" onclick="selecionarFuncionario(1)">Funcionário 1</li>
-          <li class="funcionarios-list-item" onclick="selecionarFuncionario(2)">Funcionário 2</li>
-          <li class="funcionarios-list-item" onclick="selecionarFuncionario(3)">Funcionário 3</li>
-          <li class="funcionarios-list-item" onclick="selecionarFuncionario(4)">Funcionário 4</li>
-          <li class="funcionarios-list-item" onclick="selecionarFuncionario(5)">Isa</li>
-      </ul>
-      <button onclick="fecharModal()">Fechar</button>
-  </div>
-</div>
+    <span class="close">&times;</span>
+            
+   
+<!-- Lista de funcionários -->
+    <input type="text" id="searchInput" class="search-input" onkeyup="searchEmployees()" placeholder="Digite o nome do funcionário">
+    <ul id="employeeList" class="employee-list">
+      <li class="employee-item">CAIO GARCIA CAPEL</li>
+      <li class="employee-item">FERNANDA MENDES DOS SANTOS </li>
+      <li class="employee-item">GABRIEL GREGOTIO S. FREITAS</li>
+      <li class="employee-item">IRINEU ALVES CARDOSO FILHO</li>
+      <li class="employee-item">ISAIAS CHIPOCH</li>
+      <li class="employee-item">ISABELLY PEREIRA GOMES</li>
+      <li class="employee-item">JOSE CARLOS TAVARES</li>
+      <li class="employee-item">LUCAS DA SILVA NUNES</li>
+      <li class="employee-item">REGIANE KEMITA</li>
+      <li class="employee-item">WANDERSON F. MEDINA RODRIGUES</li>
+    </ul>
+
+  <h2>Funcionário selecionado:</h2>
+            <p id="selectedEmployee"></p>
+            <button id="selectButton">Selecionar</button>
+  
+
 
 <script>
   // Função para abrir o modal
-  function abrirModal() {
-      document.getElementById('modalFuncionarios').style.display = 'block';
+  function openModal() {
+    document.getElementById('modal').style.display = 'block';
   }
 
   // Função para fechar o modal
-  function fecharModal() {
-      document.getElementById('modalFuncionarios').style.display = 'none';
-  }
-
-  // Função para selecionar um funcionário
-  function selecionarFuncionario(idFuncionario) {
-      // Aqui você pode fazer o que desejar com o ID do funcionário selecionado
-      console.log('Funcionário selecionado:', idFuncionario);
-      // Fechar o modal após selecionar o funcionário
-      fecharModal();
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
   }
 
   // Função para buscar funcionários na lista
-  function buscarFuncionarios() {
-      var inputBusca = document.getElementById('inputBusca');
-      var filter = inputBusca.value.toUpperCase(); // Obter o valor do campo de busca e converter para maiúsculas
-            var listaFuncionarios = document.getElementById('listaFuncionarios');
-            var funcionarios = listaFuncionarios.getElementsByTagName('li'); // Obter os elementos de lista de funcionários
+  function searchEmployees() {
+    let input, filter, ul, li, item, i;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById('employeeList');
+    li = ul.getElementsByClassName('employee-item');
 
-            // Loop para percorrer a lista de funcionários e ocultar/mostrar com base na busca
-            for (var i = 0; i < funcionarios.length; i++) {
-                var nomeFuncionario = funcionarios[i].innerText;
-                if (nomeFuncionario.toUpperCase().indexOf(filter) > -1) {
-                    funcionarios[i].style.display = '';
-                } else {
-                    funcionarios[i].style.display = 'none';
-                }
-            }
-        }
-  </script>
+    for (i = 0; i < li.length; i++) {
+      item = li[i];
+      if (item.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    }
+  }
+     // Seleciona o funcionário e preenche o campo de busca ao clicar no botão "Selecionar"
+     const selectButton = document.getElementById('selectButton');
+
+selectButton.addEventListener('click', () => {
+    const selectedEmployeeText = selectedEmployee.textContent;
+    const searchInput = document.getElementById('searchInput');
+    searchInput.value = selectedEmployeeText;
+    modal.style.display = 'none';
+});
+
+</script>
 
 <script src="js/CadSaida.js" type="module"></script>
 </body>

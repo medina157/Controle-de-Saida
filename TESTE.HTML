@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Modal com Lista de Funcionários</title>
+    <style>
+        /* Estilos para o modal e a lista de funcionários */
+        /* ... (estilos do modal e da lista de funcionários) ... */
+    </style>
+</head>
+
+<body>
+    <h1>Funcionários</h1>
+    <input type="text" id="searchInput" class="search-input" placeholder="Buscar funcionário...">
+    <ul id="employeeList" class="employee-list">
+        <li>Funcionário 1</li>
+        <li>Funcionário 2</li>
+        <li>Funcionário 3</li>
+        <li>Funcionário 4</li>
+        <li>Funcionário 5</li>
+    </ul>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Funcionário selecionado:</h2>
+            <p id="selectedEmployee"></p>
+            <button id="selectButton">Selecionar</button>
+        </div>
+        <h1>Funcionários</h1>
+    <input type="text" id="searchInput" class="search-input" placeholder="Buscar funcionário...">
+    <ul id="employeeList" class="employee-list">
+        <li>Funcionário 1</li>
+        <li>Funcionário 2</li>
+        <li>Funcionário 3</li>
+        <li>Funcionário 4</li>
+        <li>Funcionário 5</li>
+    </ul>
+    </div>
+
+    <script>
+        // Abre o modal ao clicar em um funcionário da lista
+        const employeeList = document.getElementById('employeeList');
+        const selectedEmployee = document.getElementById('selectedEmployee');
+        const modal = document.getElementById('myModal');
+        const span = document.getElementsByClassName('close')[0];
+
+        employeeList.addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                selectedEmployee.textContent = event.target.textContent;
+                modal.style.display = 'block';
+            }
+        });
+
+        // Fecha o modal ao clicar no botão de fechar (X)
+        span.onclick = function () {
+            modal.style.display = 'none';
+        }
+
+        // Fecha o modal ao clicar fora dele
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Filtra os funcionários na lista de acordo com o valor digitado no campo de busca
+        const searchInput = document.getElementById('searchInput');
+
+        searchInput.addEventListener('input', () => {
+            const filter = searchInput.value.toUpperCase();
+            const employees = employeeList.getElementsByTagName('li');
+
+            for (let i = 0; i < employees.length; i++) {
+                const employee = employees[i];
+                const employeeName = employee.textContent.toUpperCase();
+                if (employeeName.indexOf(filter) > -1) {
+                    employee.style.display = '';
+                } else {
+                    employee.style.display = 'none';
+                }
+            }
+        });
+
+   
+    </script>
+</body>
+
+</html>
