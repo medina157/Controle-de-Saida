@@ -36,6 +36,7 @@ const arrayDocumentos = await getDocs(colecao)
 
         card.append(h2, ptexto, phora, img)
         dashboard.append(card)
+
 });
 
 document.querySelector('.mensagem').style.display = 'none';
@@ -56,6 +57,7 @@ funcionarioRef.delete()
        // document.getElementById("lixeira").addEventListener("click", async() =>{
         //   await deleteDoc(doc(db, "funcionarios",));
      //   })
+
 
 
     // esconde a mensagem
