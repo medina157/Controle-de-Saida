@@ -44,14 +44,7 @@ const arrayDocumentos = await getDocs(colecao)
         
         card.append(h2, ptexto, phora, img)
         dashboard.append(card)
-
-       
-  
-       // document.getElementById("lixeira").addEventListener("click", async() =>{
-        //   await deleteDoc(doc(db, "funcionarios",));
-     //   })
-
-
+        
     // esconde a mensagem
     document.querySelector('.mensagem').style.display = 'none';
   
