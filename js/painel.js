@@ -1,6 +1,6 @@
 import { db } from "../js/firebase.js";
 
-import { getDocs, collection, query, where,deleteDoc, doc} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { getDocs, collection, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
 let dashboard = document.getElementById("dashboard")
@@ -9,56 +9,55 @@ const colecao = collection(db, "funcionario")
 const arrayDocumentos = await getDocs(colecao)
 
 
-    arrayDocumentos.forEach(doc => {
+arrayDocumentos.forEach(doc_atual => {
 
-        let card = document.createElement("div")
-        card.setAttribute("class", "card")
-        
-        let h2 = document.createElement("h2")
-        h2.setAttribute("class", "h2nome")
-        h2.innerHTML = doc.get("nome")
-        
-        let ptexto = document.createElement("p")
-        ptexto.setAttribute("class", "ptexto")
-        ptexto.innerHTML = `Foi Para - ${doc.get("departamento")}`
-        
-        let phora = document.createElement("p")
-        phora.setAttribute("class", "hora")
-        phora.innerHTML = doc.get("hora")
-        
-        let img = document.createElement("img")
+    let card = document.createElement("div")
+    card.setAttribute("class", "card")
 
-        const image = document.getElementById('lixeira');
+    let h2 = document.createElement("h2")
+    h2.setAttribute("class", "h2nome")
+    h2.innerHTML = doc_atual.get("nome")
+
+    let ptexto = document.createElement("p")
+    ptexto.setAttribute("class", "ptexto")
+    ptexto.innerHTML = `Foi Para - ${doc_atual.get("departamento")}`
+
+    let phora = document.createElement("p")
+    phora.setAttribute("class", "hora")
+    phora.innerHTML = doc_atual.get("hora")
+
+    let img = document.createElement("img")
+
+    img.setAttribute("id", doc_atual.id)
+
+    const image = document.getElementById(doc_atual.id);
+    img.addEventListener('click', async () => {
 
 
-        
-        img.src = "../img/lata-de-lixo.png"
+        await deleteDoc(doc(db, "funcionario", event.target.id));
 
-        card.append(h2, ptexto, phora, img)
-        dashboard.append(card)
+        location.reload()
 
-});
 
-document.querySelector('.mensagem').style.display = 'none';
 
-       // Obtenha uma referência para o documento que deseja excluir
-const funcionarioId = 'hy1Sp2l6VwegbNgQVKRK';
-const funcionarioRef = firebase.firestore().collection('funcionário').doc(funcionarioId);
 
-// Chame o método `delete()` na referência para excluir o documento
-funcionarioRef.delete()
-  .then(() => console.log('Funcionário excluído com sucesso!'))
-  .catch(error => console.error(error));
-        
-       
 
-       
-  
-       // document.getElementById("lixeira").addEventListener("click", async() =>{
-        //   await deleteDoc(doc(db, "funcionarios",));
-     //   })
 
+    });
+    img.src = "../img/lata-de-lixo.png"
+
+    card.append(h2, ptexto, phora, img)
+    dashboard.append(card)
+
+
+
+    // document.getElementById("lixeira").addEventListener("click", async() =>{
+    //   await deleteDoc(doc(db, "funcionarios",));
+    //   })
 
 
     // esconde a mensagem
-    
+    document.querySelector('.mensagem').style.display = 'none';
+
+});
+
