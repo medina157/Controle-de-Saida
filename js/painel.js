@@ -27,23 +27,29 @@ const arrayDocumentos = await getDocs(colecao)
         phora.innerHTML = doc.get("hora")
         
         let img = document.createElement("img")
-        
-        img.setAttribute("id", "lixeira")
 
         const image = document.getElementById('lixeira');
-        img.addEventListener('click', () => {
-        // Recupere a referência para o nó do Firebase que você deseja excluir
-        const databaseRef = firebase.database().ref('');
-  
-    // Chame o método `remove()` na referência para excluir os dados do Firebase
-        databaseRef.remove()
-        .then(() => console.log('Dados excluídos com sucesso!'))
-        .catch(error => console.error(error));
-});
-        img.src = "../img/lata-de-lixo.png"
+
+
         
+        img.src = "../img/lata-de-lixo.png"
+
         card.append(h2, ptexto, phora, img)
         dashboard.append(card)
+});
+
+document.querySelector('.mensagem').style.display = 'none';
+
+       // Obtenha uma referência para o documento que deseja excluir
+const funcionarioId = 'hy1Sp2l6VwegbNgQVKRK';
+const funcionarioRef = firebase.firestore().collection('funcionário').doc(funcionarioId);
+
+// Chame o método `delete()` na referência para excluir o documento
+funcionarioRef.delete()
+  .then(() => console.log('Funcionário excluído com sucesso!'))
+  .catch(error => console.error(error));
+        
+       
 
        
   
@@ -53,7 +59,4 @@ const arrayDocumentos = await getDocs(colecao)
 
 
     // esconde a mensagem
-    document.querySelector('.mensagem').style.display = 'none';
-  
-});
-
+    

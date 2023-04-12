@@ -4,12 +4,12 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/9.17.1/firebase
 
  // Your web app's Firebase configuration
  const firebaseConfig = {
-  apiKey: "AIzaSyBgEPXOc1N-xlBv0vc8imgGTl8xx8ofFBU",
-  authDomain: "controle-de-saida-d4222.firebaseapp.com",
-  projectId: "controle-de-saida-d4222",
-  storageBucket: "controle-de-saida-d4222.appspot.com",
-  messagingSenderId: "904775203572",
-  appId: "1:904775203572:web:8d3505965eea2ba441fca1"
+  apiKey: "AIzaSyCTRbr4nsRuxzVtXd4k9OBMSZjoDwfFaZE",
+  authDomain: "controle-de-saida-aa913.firebaseapp.com",
+  projectId: "controle-de-saida-aa913",
+  storageBucket: "controle-de-saida-aa913.appspot.com",
+  messagingSenderId: "197666140397",
+  appId: "1:197666140397:web:72da3c3a368f8cb09e5ce4"
 };
 
   // Initialize Firebase
