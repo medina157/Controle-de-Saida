@@ -42,7 +42,37 @@ arrayDocumentos.forEach(doc_atual => {
 
 
 
+// Exemplo de código que utiliza um modal
+function deletarInformacao() {
+  // exibe o modal de exclusão
+  const modalExclusao = document.getElementById("modal-exclusao");
+  modalExclusao.style.display = "block";
 
+  // configura os botões "Sim" e "Não"
+  const btnExcluirSim = document.getElementById("btn-excluir-sim");
+  const btnExcluirNao = document.getElementById("btn-excluir-nao");
+
+  // quando o botão "Sim" é clicado, executa o código para excluir a informação
+  btnExcluirSim.onclick = function() {
+    // código para excluir a informação
+    // ...
+
+    // fecha o modal
+    modalExclusao.style.display = "none";
+  }
+
+  // quando o botão "Não" é clicado, fecha o modal sem excluir a informação
+  btnExcluirNao.onclick = function() {
+    modalExclusao.style.display = "none";
+  }
+}
+if (confirm("Tem certeza de que deseja excluir essa informação?")) {
+    const index = /* obter o índice do objeto a ser excluído */
+    meuArray.splice(index, 1); // exclui o objeto do array
+    alert("Informação excluída com sucesso!");
+  } else {
+     alert("A exclusão foi cancelada.");
+  }
     });
     img.src = "../img/lata-de-lixo.png"
 
