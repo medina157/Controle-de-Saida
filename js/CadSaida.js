@@ -28,32 +28,5 @@ document.getElementById("registrarsaida").addEventListener("click", function(){
 
         
 })
-//====================================================================MODAL==================
- // Função para abrir o modal
- function openModal() {
-    document.getElementById('modal').style.display = 'block';
-  }
 
-  // Função para fechar o modal
-  function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-  }
-
-  // Função para buscar funcionários na lista
-  function searchEmployees() {
-    let input, filter, ul, li, item, i;
-    input = document.getElementById('searchInput');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById('employeeList');
-    li = ul.getElementsByClassName('employee-item');
-
-    for (i = 0; i < li.length; i++) {
-      item = li[i];
-      if (item.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
-      }
-    }
-  }
  
