@@ -18,9 +18,9 @@
   <div class="container">
     <h2>Registro de Saída</h2>
 <div>
-  <input id="nome" type="text" class="input">
+  <input id="employeeInput" type="text" class="input">
   <label class="labelInput">Nome</label>
-  <img src="img/lupa.png" onclick="openModal()" width="15" height="15" style="margin-left:  27vw; margin-top: -23px;" >
+  <img src="img/lupa.png" class="lupa" id="myBtn" >
 
 </div>
 <div>
@@ -39,70 +39,67 @@
 </div> 
  
 <!-- Modal -->
-<div id="modal" class="modal">
+<div id="myModal" class="modal">
+
+  <!-- Conteúdo do modal -->
   <div class="modal-content">
     <span class="close">&times;</span>
-            
-   
-<!-- Lista de funcionários -->
-    <input type="text" id="searchInput" class="search-input" onkeyup="searchEmployees()" placeholder="Digite o nome do funcionário">
-    <ul id="employeeList" class="employee-list">
-      <li class="employee-item">CAIO GARCIA CAPEL</li>
-      <li class="employee-item">FERNANDA MENDES DOS SANTOS </li>
-      <li class="employee-item">GABRIEL GREGOTIO S. FREITAS</li>
-      <li class="employee-item">IRINEU ALVES CARDOSO FILHO</li>
-      <li class="employee-item">ISAIAS CHIPOCH</li>
-      <li class="employee-item">ISABELLY PEREIRA GOMES</li>
-      <li class="employee-item">JOSE CARLOS TAVARES</li>
-      <li class="employee-item">KAMILLY EVELYN MARTINS</li>
-      <li class="employee-item">LUCAS DA SILVA NUNES</li>
-      <li class="employee-item">REGIANE KEMITA</li>
-      <li class="employee-item">WANDERSON F. MEDINA RODRIGUES</li>
-    </ul>
-
-  <h2>Funcionário selecionado:</h2>
-            <p id="selectedEmployee"></p>
-            <button id="selectButton">Selecionar</button>
-  
+    <h3>Selecione um funcionário:</h3>
+    <select id="employeeSelect">
+      <option value="Funcionário 1">Funcionário 1</option>
+      <option value="Funcionário 2">Funcionário 2</option>
+      <option value="Funcionário 3">Funcionário 3</option>
+      <option value="Funcionário 4">Funcionário 4</option>
+    </select>
+    <br><br>
+    <button id="selectButton">Selecionar</button>
+  </div>
+</div>
+<!-- Script do modal -->
 <script>
-  // Função para abrir o modal
-  function openModal() {
-    document.getElementById('modal').style.display = 'block';
+  // Seleciona o modal
+  var modal = document.getElementById("myModal");
+
+  // Seleciona o botão que abre o modal
+  var btn = document.getElementById("myBtn");
+
+  // Seleciona o botão para selecionar o funcionário
+  var selectBtn = document.getElementById("selectButton");
+
+  // Seleciona o elemento select com os funcionários
+  var select = document.getElementById("employeeSelect");
+
+  // Seleciona o elemento input que receberá o valor selecionado
+  var input = document.getElementById("employeeInput");
+
+  // Quando o usuário clicar no botão, abre o modal
+  btn.onclick = function() {
+    modal.style.display = "block";
   }
 
-  // Função para fechar o modal
-  function closeModal() {
-    modal.style.display = 'none';
+  // Quando o usuário clicar no botão de
+    selectBtn.onclick = function() {
+  // Atualiza o valor do input com o valor selecionado no select
+  input.value = select.value;
+  
+  // Fecha o modal
+  modal.style.display = "none";
+}
+
+// Quando o usuário clicar no "x" para fechar o modal, fecha o modal
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Quando o usuário clicar fora do modal, fecha o modal
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
-
-  // Função para buscar funcionários na lista
-  function searchEmployees() {
-    let input, filter, ul, li, item, i;
-    input = document.getElementById('searchInput');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById('employeeList');
-    li = ul.getElementsByClassName('employee-item');
-
-    for (i = 0; i < li.length; i++) {
-      item = li[i];
-      if (item.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
-      }
-    }
-  }
-     // Seleciona o funcionário e preenche o campo de busca ao clicar no botão "Selecionar"
-     const selectButton = document.getElementById('selectButton');
-
-selectButton.addEventListener('click', () => {
-    const selectedEmployeeText = selectedEmployee.textContent;
-    const searchInput = document.getElementById('searchInput');
-    searchInput.value = selectedEmployeeText;
-    modal.style.display = 'none';
-});
-
+}
 </script>
+
 
 <script src="js/CadSaida.js" type="module"></script>
 </body>

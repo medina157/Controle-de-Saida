@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modal Exemplo</title>
+	<style>
+		.modal {
+			display: none; 
+			position: fixed; 
+			z-index: 1; 
+			left: 0;
+			top: 0;
+			width: 100%; 
+			height: 100%; 
+			overflow: auto; 
+			background-color: rgba(0,0,0,0.4); 
+		}
+
+		.modal-content {
+			background-color: #fefefe;
+			margin: 15% auto; 
+			padding: 20px;
+			border: 1px solid #888;
+			width: 80%; 
+			max-width: 500px;
+			text-align: center;
+			position: relative;
+		}
+
+		.close {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			color: #aaa;
+			font-size: 28px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+	</style>
+</head>
+<body>
+
+	<h2>Exemplo de Modal</h2>
+	
+	<!-- Botão para abrir o modal -->
+	<img src="img/lupa.png" width="30px" height="30px" id="myBtn">
+
+	<!-- Modal -->
+	<div id="myModal" class="modal">
+
+	  <!-- Conteúdo do modal -->
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <h3>Selecione um funcionário:</h3>
+	    <select id="employeeSelect">
+	    	<option value="Funcionário 1">Funcionário 1</option>
+	    	<option value="Funcionário 2">Funcionário 2</option>
+	    	<option value="Funcionário 3">Funcionário 3</option>
+	    	<option value="Funcionário 4">Funcionário 4</option>
+	    </select>
+	    <br><br>
+	    <button id="selectButton">Selecionar</button>
+	  </div>
+
+	</div>
+<img src="" alt="">
+	<!-- Input para receber o valor selecionado -->
+	<input type="text" id="employeeInput">
+
+	<!-- Script do modal -->
+	<script>
+		// Seleciona o modal
+		var modal = document.getElementById("myModal");
+
+		// Seleciona o botão que abre o modal
+		var btn = document.getElementById("myBtn");
+
+		// Seleciona o botão para selecionar o funcionário
+		var selectBtn = document.getElementById("selectButton");
+
+		// Seleciona o elemento select com os funcionários
+		var select = document.getElementById("employeeSelect");
+
+		// Seleciona o elemento input que receberá o valor selecionado
+		var input = document.getElementById("employeeInput");
+
+		// Quando o usuário clicar no botão, abre o modal
+		btn.onclick = function() {
+		  modal.style.display = "block";
+		}
+
+		// Quando o usuário clicar no botão de
+    	selectBtn.onclick = function() {
+		// Atualiza o valor do input com o valor selecionado no select
+		input.value = select.value;
+		
+		// Fecha o modal
+		modal.style.display = "none";
+	}
+
+	// Quando o usuário clicar no "x" para fechar o modal, fecha o modal
+	var span = document.getElementsByClassName("close")[0];
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+
+	// Quando o usuário clicar fora do modal, fecha o modal
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+</script>
