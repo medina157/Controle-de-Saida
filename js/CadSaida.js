@@ -29,4 +29,44 @@ document.getElementById("registrarsaida").addEventListener("click", function(){
         
 })
 
+ // Seleciona o modal
+ var modal = document.getElementById("myModal");
+
+ // Seleciona o botão que abre o modal
+ var btn = document.getElementById("myBtn");
+
+ // Seleciona o botão para selecionar o funcionário
+ var selectBtn = document.getElementById("selectButton");
+
+ // Seleciona o elemento select com os funcionários
+ var select = document.getElementById("employeeSelect");
+
+ // Seleciona o elemento input que receberá o valor selecionado
+ var input = document.getElementById("nome");
+
+ // Quando o usuário clicar no botão, abre o modal
+ btn.onclick = function() {
+   modal.style.display = "block";
+ }
+
+ // Quando o usuário clicar no botão de
+   selectBtn.onclick = function() {
+ // Atualiza o valor do input com o valor selecionado no select
+ input.value = select.value;
  
+ // Fecha o modal
+ modal.style.display = "none";
+}
+
+// Quando o usuário clicar no "x" para fechar o modal, fecha o modal
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+ modal.style.display = "none";
+}
+
+// Quando o usuário clicar fora do modal, fecha o modal
+window.onclick = function(event) {
+ if (event.target == modal) {
+   modal.style.display = "none";
+ }
+}
