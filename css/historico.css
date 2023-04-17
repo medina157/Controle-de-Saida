@@ -47,14 +47,14 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    cursor: pointer;
+    
 
-    padding: 10px;
+    padding: px;
     width: auto;
     border-radius: 10px;
     margin-bottom: 15px;
     margin-top: 30px;
-    box-shadow: 1px 0px 10px rgba(32, 2, 2, 0.253);
+    box-shadow: 1px 0px 10px rgba(23, 79, 200, 0.353);
     background-color:#FFFF;
 
     transition: all ease-in-out 0.1s;
@@ -83,6 +83,7 @@ body{
         height: 40px; 
         right: 30px;
         border-radius: 30%;
+        cursor: pointer;
 
       }
       
