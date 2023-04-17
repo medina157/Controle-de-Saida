@@ -1,6 +1,6 @@
 # Controle-de-Saida
 
-Login - http://127.0.0.1:5500/login.html
+Login - https://medina157.github.io/Controle-de-Saida/login.html
 
 Mural - http://127.0.0.1:5500/painel.html
 
