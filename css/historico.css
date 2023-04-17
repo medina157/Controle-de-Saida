@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+body{
+   
+    font-family: poppins;
+    background-color:FFFFE0 ;
+    color:#000000 ;
+}
+ hr  {
+  width: 97%; 
+  text-align: left; 
+    border-color: red;
+ }
+
+ .title{
+    
+    margin: 16px;
+    color:#012f9b;
+    font-weight: bold;
+ }
+
+ /* Estilo da tabela */
+   table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  th, td {
+  
+    padding: 8px;
+    text-align: left;
+  }
+
+
+  /* Estilo de cabeçalho */
+  .header {
+ 
+    padding: 20px;
+    text-align: center;
+  }
+
+
+
+
+.registroItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+
+    padding: 10px;
+    width: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    box-shadow: 1px 0px 10px rgba(32, 2, 2, 0.253);
+    background-color:#FFFF;
+
+    transition: all ease-in-out 0.1s;
+
+  
+}
+
+    
+    .registroItem:hover{
+        box-shadow: 1px 0px 10px rgb(15, 58, 118);
+    }
+
+    .registroItem div{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+    /*//////////////////////////////////////LIXO/////////////////////////////////////*/
+
+    .botao-imagem {
+        display: inline-block; 
+        position: relative; 
+        overflow: hidden; 
+        width: 40px; 
+        height: 40px; 
+        right: 30px;
+        border-radius: 30%;
+
+      }
+      
+      .botao-imagem img {
+        width: 100%; /* Define a largura da imagem como 100% para preencher o botão */
+        height: 100%; /* Define a altura da imagem como 100% para preencher o botão */
+        object-fit: cover; /* Redimensiona a imagem para cobrir todo o espaço do botão */
+       
+      }
+      
+      .botao-imagem:hover::after {
+        content: ''; /* Adiciona um pseudo-elemento ::after para criar o efeito de hover */
+        display: block; /* Define como um elemento de bloco para preencher o botão de imagem */
+        position: absolute; /* Define a posição absoluta em relação ao botão de imagem */
+        top: 0;
+        right: 0;
+        width: 100%; /* Define a largura do pseudo-elemento como 100% para cobrir o botão de imagem */
+        height: 100%; /* Define a altura do pseudo-elemento como 100% para cobrir o botão de imagem */
+        background-color: #ff000053; /* Define a cor de fundo para o efeito de hover */
+        /* Você também pode adicionar outros estilos, como animações, sombras, etc., para personalizar o efeito de hover conforme desejado */
+    
+      }
+      
