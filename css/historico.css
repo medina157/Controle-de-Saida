@@ -6,6 +6,10 @@ body{
     background-color:FFFFE0 ;
     color:#000000 ;
 }
+#divRegistro{
+  display: flex;
+  flex-direction: column;
+}
  hr  {
   width: 97%; 
   text-align: left; 

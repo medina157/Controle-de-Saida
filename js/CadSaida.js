@@ -24,6 +24,13 @@ document.getElementById("registrarsaida").addEventListener("click", function(){
         
     });
 
+    addDoc(collection(db, "historico"), {
+      nome: nomefuncionario, 
+      departamento: departamento,
+      hora:horario
+      
+      
+  });
    
 
         

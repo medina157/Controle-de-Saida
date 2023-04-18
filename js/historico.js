@@ -1,49 +1,49 @@
 import { db } from "../js/firebase.js";
 
-import { getDocs, collection} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { getDocs, collection } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
+let divRegistro = document.getElementById("divRegistro")
 
-let registroItem = document.getElementById("registroItem")
-
-const colecao = collection(db, "funcionario")
+const colecao = collection(db, "historico")
 const arrayDocumentos = await getDocs(colecao)
 
-/**arrayDocumentos.forEach(doc =>{
-
-    let registroItem = document.createElement("div")
-    card.setAttribute("class", "registroItem")
-
-    let table = document.createElement(table)
-    table.setAttribute("class", "table")
-
-    let tr = document.createElement(tr)
-    tr.setAttribute("class", "tr")
-   
-    let th_nome = document.createElement(th_nome)
-    th.setAttribute("class", "th")
-    th.innerHTML = doc.get("nome")
-
-    let th_dep = document.createElement(th_dep)
-    th.setAttribute("class", "th")
-    th.innerHTML = doc.get("departamento")
-
-    let th_hrs = document.createElement(th_hrs)
-    th.setAttribute("class", "th")
-    th.innerHTML = doc.get("hora")
-
+arrayDocumentos.forEach(doc => {
     
-})*/
-dadosRef.on("value", function(array) {
-    // Aqui você pode manipular os dados recebidos do Firebase
-  });
-  dadosRef.on("value", function(snapshot) {
-    let dados = snapshot.val();
-    let tabelaHTML = "<table><thead><tr><th>Coluna 1</th><th>Coluna 2</th></tr></thead><tbody>";
-    for (let key in dados) {
-      tabelaHTML += "<tr><td>" + dados[key].coluna1 + "</td><td>" + dados[key].coluna2 + "</td></tr>";
-    }
-    tabelaHTML += "</tbody></table>";
-    // Adicione a tabela HTML ao DOM
-    document.getElementById("tabela").innerHTML = tabelaHTML;
-  });
-  
+    let registroItem = document.createElement("div")
+    registroItem.setAttribute("class", "registroItem")
+
+    let table = document.createElement("table")
+    
+    let tr1 = document.createElement("tr")
+    let th1 = document.createElement("th")
+    th1.innerHTML = "Nome"
+
+    let th2 = document.createElement("th")
+    th2.innerHTML = "Departamento"
+
+    let th3 = document.createElement("th")
+    th3.innerHTML = "Horário de Saída"
+
+    let tr2 = document.createElement("tr")
+    let td1 = document.createElement("td")
+    td1.innerHTML = doc.get("nome")
+
+    let td2 = document.createElement("td")
+    td2.innerHTML = doc.get("departamento")
+
+    let td3 = document.createElement("td")
+    td3.innerHTML = doc.get("hora")
+    
+    let td4 = document.createElement("td")
+    td4.setAttribute("class", "botao-imagem")
+
+    let img = document.createElement("img")
+    img.src = "../img/lixeira (1).png"
+
+    tr1.append(th1, th2, th3)
+    tr2.append(td1, td2, td3, td4)
+    td4.append(img)
+    table.append(tr1,tr2)
+    registroItem.append(table)
+    divRegistro.append(registroItem)
+});
