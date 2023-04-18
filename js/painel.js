@@ -32,10 +32,10 @@ arrayDocumentos.forEach(doc_atual => {
 
     await deleteDoc(doc(db, "funcionario", event.target.id));
     
-
-    location.reload();
+   
+    
   });
-  img.src = "../img/lata-de-lixo.png"
+
 
   card.append(h2, ptexto, phora, img)
   dashboard.append(card)
@@ -52,3 +52,6 @@ arrayDocumentos.forEach(doc_atual => {
 
 });
 
+setInterval(function(){
+  location.reload();
+}, 100000);
