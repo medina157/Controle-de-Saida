@@ -43,7 +43,7 @@
 }
 
 .input{
-  height: 7%;
+  height: 11px;
   width: 97%;
   padding: 10px;
   border-radius: 5px;
@@ -141,6 +141,7 @@ input[type="text"]:focus, input[type="time"]:focus {
     position: absolute;
     top: 10px;
     right: 10px;
+
 
   }
   .employeeSelect{
