@@ -6,6 +6,10 @@ body{
     background-color:FFFFE0 ;
     color:#000000 ;
 }
+#divRegistro{
+  display: flex;
+  flex-direction: column;
+}
  hr  {
   width: 97%; 
   text-align: left; 
@@ -106,4 +110,113 @@ body{
         /* Você também pode adicionar outros estilos, como animações, sombras, etc., para personalizar o efeito de hover conforme desejado */
     
       }
+
+      @media(max-width:1920px){
+        .registroItem, td, th{
+          font-size: 20px;
+          text-align: center;
+        }
+
+        table{
+          table-layout: fixed;
+        }
+        .botao-imagem{
+          width: 40px;
+          height: 40px;
+          left: 0;
+        }
+        .botao-imagem:hover{
+          border-radius: 50%;
+        }
+      } 
+
+      @media(max-width:1400px){
+        .registroItem, td, th{
+          font-size: 17px;
+          text-align: center;
+        }
+
+        table{
+          table-layout: fixed;
+        }
+        .botao-imagem{
+          width: 35px;
+          height: 35px;
+          left: 0;
+        }
+        .botao-imagem:hover{
+          border-radius: 50%;
+        }
+      }          
+
+      @media(max-width:1000px){
+        .registroItem, td, th{
+          font-size: 15px;
+          text-align: center;
+        }
+
+        table{
+          table-layout: fixed;
+        }
+        .botao-imagem{
+          width: 30px;
+          height: 30px;
+          left: 0;
+        }
+        .botao-imagem:hover{
+          border-radius: 50%;
+        }
+      }     
+        
+
+      @media(max-width:700px){
+
+        .registroItem, td, th{
+          font-size: 14px;
+          text-align: center;
+        }
+        table{
+          table-layout: fixed;
+        }
+        .botao-imagem{
+          width: 25px;
+          height: 25px;
+          left: 0;
+        }
+        .botao-imagem:hover{
+          border-radius: 50%;
+        }
+      }        
+
+      @media(max-width:500px){
+        .registroItem, td, th{
+          font-size: 12px;
+          text-align: center;
+        }
+
+        .botao-imagem{
+          width: 20px;
+          height: 20px;
+          left: 0;
+        }
+
+        .botao-imagem:hover{
+          border-radius: 50%;
+        }
+
+        table{
+          table-layout: fixed;
+        }
+    }
+      
+    @media(max-width:400px){
+      table{
+        table-layout: fixed;
+      }
+      .registroItem, td, th{
+        font-size: 10px;
+        text-align: center;
+      }
+
+    }
       

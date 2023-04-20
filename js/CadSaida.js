@@ -24,9 +24,7 @@ document.getElementById("registrarsaida").addEventListener("click", function(){
         
     });
 
-   
-
-        
+    
 })
 
  // Seleciona o modal
@@ -70,3 +68,7 @@ window.onclick = function(event) {
    modal.style.display = "none";
  }
 }
+
+
+
+

@@ -43,7 +43,7 @@
 }
 
 .input{
-  height: 7%;
+  height: 11px;
   width: 97%;
   padding: 10px;
   border-radius: 5px;
@@ -142,6 +142,7 @@ input[type="text"]:focus, input[type="time"]:focus {
     top: 10px;
     right: 10px;
 
+
   }
   .employeeSelect{
     font-family: "Poppins";
@@ -193,3 +194,38 @@ input[type="text"]:focus, input[type="time"]:focus {
     border-color: #4365b4;
     cursor: pointer;
   }
+
+  @media(max-width:1200px){
+    .container{
+      width: 40%;
+      margin-top: 20%;
+    }
+   }
+
+   @media(max-width:1000px){
+    .container{
+      width: 50%;
+      margin-top: 30%;
+    }
+   }
+   @media(max-width:700px){
+    .container{
+      width: 80%;
+      margin-top: 30%;
+    
+    }
+   }
+
+ @media(max-width:500px){
+  .container{
+    width: 90%;
+    margin-top: 30%;
+  }
+ }
+ @media(max-width:380px){
+  .container{
+    width: 90%;
+    margin-top: 15%;
+    margin-left: -10px;
+  }
+ }

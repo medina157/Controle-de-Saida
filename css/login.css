@@ -204,13 +204,12 @@ form input[type="submit"]:hover {
   * {
       margin: 0px; 
       padding: 0px; 
-      box-sizing: border-box;
+      box-sizing: border-box;      
   }
   
   body, html {
       height: 100%;
       font-family: "Poppins";
-   
   }
   
   ul, li {
@@ -261,9 +260,6 @@ form input[type="submit"]:hover {
     margin-top: 8px;
   }
   
-  .margin-left-50 {
-    margin-left: 50px;
-  }
   
   /*
     Login
@@ -276,6 +272,7 @@ form input[type="submit"]:hover {
   
   .container-login {
     width: 100%;  
+    margin: 0 auto;
     min-height: 95vh;
     display: flex;
     flex-wrap: wrap;
@@ -475,6 +472,14 @@ form input[type="submit"]:hover {
   .mensagem {
     display: block; /* a mensagem é mostrada por padrão */
   }
+
+  @media(max-width:400px){
+    .container-login{
+      margin:0 auto;
+    }
+  }  
   
+  
+    
 
 
