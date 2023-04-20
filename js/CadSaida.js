@@ -69,6 +69,11 @@ window.onclick = function(event) {
  }
 }
 
+document.getElementById("btn-page2").addEventListener("click", function() {
+  document.getElementById("btn-page2").addEventListener("click", function() {
+    window.location.href = "./historico.html";
+  });
+});
 
 
 

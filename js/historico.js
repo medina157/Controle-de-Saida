@@ -59,3 +59,7 @@ arrayDocumentos.forEach(doc_atual => {
     registroItem.append(table)
     divRegistro.append(registroItem)
 });
+
+document.getElementById("btn-page1").addEventListener("click", function() {
+  window.history.back();
+});

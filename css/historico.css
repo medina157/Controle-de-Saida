@@ -111,6 +111,12 @@ body{
     
       }
 
+      .voltar{
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+      }
+
       @media(max-width:1920px){
         .registroItem, td, th{
           font-size: 20px;
