@@ -55,3 +55,18 @@ arrayDocumentos.forEach(doc_atual => {
 setInterval(function(){
   location.reload();
 }, 100000);
+
+
+//Pontuação
+
+const menuContainer = document.querySelector('.menu-container');
+const openMenuBtn = document.querySelector('.open-menu-btn');
+const closeMenuBtn = document.querySelector('.close-menu-btn');
+
+openMenuBtn.addEventListener('click', () => {
+  menuContainer.classList.add('open');
+});
+
+closeMenuBtn.addEventListener('click', () => {
+  menuContainer.classList.remove('open');
+});
