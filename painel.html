@@ -9,10 +9,92 @@
     <title>Mural de Monitoramento</title>
 </head>
 <body>
-
   <header>
+    
     <img class="logo" src="img/logo600x80.png" alt="">
 </header>
+<button class="open-menu-btn" style="position: absolute; left: 10px; top: 20px;">Abrir Menu</button>
+
+<div class="menu-container">
+    
+    <ul class="menu">
+    <button class="close-menu-btn" style="left: 240px; width: 50px;">Fechar</button>
+      <li><span>Lista de Pontuação</span></li>
+      <li><span>João</span><span>500</span></li>
+      <li><span>Maria</span><span>700</span></li>
+      <li><span>Lucas</span><span>300</span></li>
+      <li><span>Carla</span><span>900</span></li>
+    </ul>
+  </div>
+  <style>
+    .menu-container {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.menu-container.open {
+  left: 0;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  line-height: 2;
+}
+
+.menu li span:first-child {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.close-menu-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+@media (max-width: 767px) {
+  .menu-container {
+    width: 100%;
+    left: -100%;
+  }
+
+  .menu-container.open {
+    left: 0;
+  }
+}
+
+  </style>
+
+  <script>
+    const menuContainer = document.querySelector('.menu-container');
+const openMenuBtn = document.querySelector('.open-menu-btn');
+const closeMenuBtn = document.querySelector('.close-menu-btn');
+
+openMenuBtn.addEventListener('click', () => {
+  menuContainer.classList.add('open');
+});
+
+closeMenuBtn.addEventListener('click', () => {
+  menuContainer.classList.remove('open');
+});
+
+  </script>
 
 
   <div id="time">
