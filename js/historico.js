@@ -63,29 +63,3 @@ arrayDocumentos.forEach(doc_atual => {
 document.getElementById("btn-page1").addEventListener("click", function() {
   window.history.back();
 });
-
-const listaItens = document.getElementById("lista-itens");
-const pontuacaoSpan = document.getElementById("pontuacao");
-let pontuacao = 0;
-
-const itens = ["Item 1", "Item 2", "Item 3"];
-
-for (let i = 0; i < itens.length; i++) {
-  const li = document.createElement("li");
-  li.textContent = itens[i];
-  
-  const btnExcluir = document.createElement("button");
-  btnExcluir.textContent = "Excluir";
-  btnExcluir.onclick = function() {
-    excluirItem(btnExcluir.parentNode);
-  };
-  
-  li.appendChild(btnExcluir);
-  listaItens.appendChild(li);
-}
-
-function excluirItem(item) {
-  pontuacao += 1; //10 pontAdiciona os a pontuacao global
-  pontuacaoSpan.innerHTML = pontuacao; //Atualiza a exibição da pontuação no HTML
-  item.remove(); //Remove o item correspondente
-}
