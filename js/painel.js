@@ -4,7 +4,7 @@ import { getDocs, collection, doc, deleteDoc } from "https://www.gstatic.com/fir
 
 let dashboard = document.getElementById("dashboard")
 
-const colecao = collection(db, "funcionario")
+const colecao = collection(db, "registro")
 const arrayDocumentos = await getDocs(colecao)
 
 arrayDocumentos.forEach(doc_atual => {
@@ -63,10 +63,31 @@ const menuContainer = document.querySelector('.menu-container');
 const openMenuBtn = document.querySelector('.open-menu-btn');
 const closeMenuBtn = document.querySelector('.close-menu-btn');
 
-openMenuBtn.addEventListener('click', () => {
+openMenuBtn.addEventListener('click', async () => {
   menuContainer.classList.add('open');
+
+  let listaItens = document.getElementById("lista-itens")
+
+  const colecao = collection(db, "funcionario")
+  const arrayDocumentos = await getDocs(colecao)
+
+  arrayDocumentos.forEach((doc) => {
+    let li = document.createElement("li")
+    let spanNome = document.createElement("span")
+    spanNome.innerHTML = doc.get("nome")
+
+    let spanPontos = document.createElement("span")
+    spanPontos.innerHTML = doc.get("pontos")
+
+    li.append(spanNome, spanPontos)
+
+    listaItens.append(li)
+  })
+
 });
 
 closeMenuBtn.addEventListener('click', () => {
   menuContainer.classList.remove('open');
+
+  document.getElementById("lista-itens").innerHTML = null
 });

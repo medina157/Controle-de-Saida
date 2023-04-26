@@ -4,7 +4,7 @@ import { getDocs, collection, doc, deleteDoc } from "https://www.gstatic.com/fir
 
 let divRegistro = document.getElementById("divRegistro")
 
-const colecao = collection(db, "funcionario")
+const colecao = collection(db, "registro")
 const arrayDocumentos = await getDocs(colecao)
 
 arrayDocumentos.forEach(doc_atual => {
@@ -85,7 +85,7 @@ for (let i = 0; i < itens.length; i++) {
 }
 
 function excluirItem(item) {
-  pontuacao += 1; //Adiciona 10 pontos a pontuacao global
+  pontuacao += 1; //10 pontAdiciona os a pontuacao global
   pontuacaoSpan.innerHTML = pontuacao; //Atualiza a exibição da pontuação no HTML
   item.remove(); //Remove o item correspondente
 }

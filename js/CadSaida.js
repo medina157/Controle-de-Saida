@@ -16,12 +16,10 @@ document.getElementById("registrarsaida").addEventListener("click", function(){
 
      //   })
 
-    addDoc(collection(db, "funcionario"), {
+    addDoc(collection(db, "registro"), {
         nome: nomefuncionario, 
         departamento: departamento,
         hora:horario
-        
-        
     });
 
     
