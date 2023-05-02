@@ -45,7 +45,7 @@ arrayDocumentos.forEach(doc_atual => {
    
     td4.addEventListener('click', async() => {
 
-        await deleteDoc(doc(db, "funcionario", event.target.id));
+        await deleteDoc(doc(db, "registro", event.target.id));
 
           location.reload();
       });
