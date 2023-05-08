@@ -16,12 +16,10 @@ document.getElementById("registrarsaida").addEventListener("click", function(){
 
      //   })
 
-    addDoc(collection(db, "funcionario"), {
+    addDoc(collection(db, "registro"), {
         nome: nomefuncionario, 
         departamento: departamento,
         hora:horario
-        
-        
     });
 
     
@@ -69,6 +67,11 @@ window.onclick = function(event) {
  }
 }
 
+document.getElementById("btn-page2").addEventListener("click", function() {
+  document.getElementById("btn-page2").addEventListener("click", function() {
+    window.location.href = "./historico.html";
+  });
+});
 
 
 

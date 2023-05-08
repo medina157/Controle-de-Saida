@@ -1,70 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="Img/Capturar-removebg-preview.png" >
+  <link rel="shortcut icon" href="Img/Capturar-removebg-preview.png">
   <link rel="stylesheet" href="css/form.css">
-  
+
 
   <title>Registrar Saída</title>
 </head>
+
 <body>
-    <header>
+  <header>
     <img src="img/Logo sem Fundo.png" alt="">
-</header>
-  
+  </header>
   <div class="container">
     <h2>Registro de Saída</h2>
-<div>
-  <input id="nome" type="text" class="input">
-  <label class="labelInput">Nome</label>
-  <img src="img/lupa.png" class="lupa" id="myBtn" >
 
-</div>
-<div>
-  <input id="departamento"  type="text" class="input">
-  <label class="labelInput">Departamento</label>
-</div>
-<div>
-  <input id="horario"  type="time" class="input">
-  <label class="labelInput">Horário de Saída</label>
-</div>
-<div class="container-login-form-btn">
-  <button type="submit" id="registrarsaida" class="login-form-btn">
-   Registrar
-  </button>
-</div>
-</div> 
- 
-<!-- Modal -->
-<div id="myModal" class="modal">
 
-  <!-- Conteúdo do modal -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3 class="title-modal">Selecione um funcionário:</h3>
-    <select id="employeeSelect" class="employeeSelect">
-      <option value="Selecionar...">Selecionar...</option>
-      <option value="CAIO GARCIA CAPEL">CAIO GARCIA CAPEL</option>
-      <option value="FERNANDA MENDES DOS SANTOS">FERNANDA MENDES DOS SANTOS</option>
-      <option value="GABRIEL GREGOTIO S. FREITAS">GABRIEL GREGORIO S. FREITAS</option>
-      <option value="IRINEU ALVES CARDOSO FILHO">IRINEU ALVES CARDOSO FILHO</option>
-      <option value="ISAIAS CHIPOCH">ISAIAS CHIPOCH</option>
-      <option value="ISABELLY PEREIRA GOMES">ISABELLY PEREIRA GOMES</option>
-      <option value="JOSE CARLOS TAVARES">JOSE CARLOS GIARETTA TAVARES</option>
-      <option value="KAMILLY EVELYN MARTINS">KAMILLY EVELYN MARTINS</option>
-      <option value="LUCAS DA SILVA NUNES">LUCAS DA SILVA NUNES</option>
-      <option value="REGIANE KEMITA">REGIANE KEMITA</option>
-      <option value="WANDERSON F. MEDINA RODRIGUES">WANDERSON FABRICIO MEDINA RODRIGUES</option>
-    
-    </select>
-    <br><br>
-    <button id="selectButton" class="select-btn">Selecionar</button>
+    <div>
+
+      <input id="nome" type="text" class="input">
+      <label class="labelInput">Nome</label>
+      <img src="img/lupa.png" class="lupa" id="myBtn">
+
+    </div>
+    <div>
+      <input id="departamento" type="text" class="input">
+      <label class="labelInput">Departamento</label>
+    </div>
+    <div>
+      <input id="horario" type="time" class="input">
+      <label class="labelInput">Horário de Saída</label>
+    </div>
+    <div class="container-login-form-btn">
+      <button type="submit" id="registrarsaida" class="login-form-btn">
+        Registrar
+      </button>
+    </div>
+
   </div>
-</div>
+  <div id="container">
+    <button class="learn-more">
+      <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+      </span>
+      <span id="btn-page2" class="button-text">Histórico</span>
+    </button>
+  </div>
 
-<script src="js/CadSaida.js" type="module"></script>
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Conteúdo do modal -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 class="title-modal">Selecione um funcionário:</h3>
+      <select id="employeeSelect" class="employeeSelect">
+        <option value="Selecionar...">Selecionar...</option>
+        <option value="CAIO GARCIA CAPEL">CAIO GARCIA CAPEL</option>
+        <option value="FERNANDA MENDES DOS SANTOS">FERNANDA MENDES DOS SANTOS</option>
+        <option value="GABRIEL GREGOTIO S. FREITAS">GABRIEL GREGORIO S. FREITAS</option>
+        <option value="IRINEU ALVES CARDOSO FILHO">IRINEU ALVES CARDOSO FILHO</option>
+        <option value="ISAIAS CHIPOCH">ISAIAS CHIPOCH</option>
+        <option value="ISABELLY PEREIRA GOMES">ISABELLY PEREIRA GOMES</option>
+        <option value="JOSE CARLOS TAVARES">JOSE CARLOS GIARETTA TAVARES</option>
+        <option value="KAMILLY EVELYN MARTINS">KAMILLY EVELYN MARTINS</option>
+        <option value="LUCAS DA SILVA NUNES">LUCAS DA SILVA NUNES</option>
+        <option value="REGIANE KEMITA">REGIANE KEMITA</option>
+        <option value="WANDERSON FABRICIO MEDINA RODRIGUES">WANDERSON FABRICIO MEDINA RODRIGUES</option>
+
+      </select>
+      <br><br>
+      <button id="selectButton" class="select-btn">Selecionar</button>
+    </div>
+  </div>
+
+
+
+
+  <script src="js/CadSaida.js" type="module"></script>
 </body>
+
 </html>

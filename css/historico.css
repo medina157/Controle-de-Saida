@@ -14,20 +14,27 @@ body{
   width: 97%; 
   text-align: left; 
     border-color: red;
+    position: relative;
+    top: -80px;
+    
  }
 
  .title{
     
-    margin: 16px;
+    top: -80px;
     color:#012f9b;
     font-weight: bold;
+    text-align: center;
+    position: relative;
+   
+
  }
 
  /* Estilo da tabela */
    table {
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: 20px;
+   
   }
 
   th, td {
@@ -36,13 +43,6 @@ body{
     text-align: left;
   }
 
-
-  /* Estilo de cabeçalho */
-  .header {
- 
-    padding: 20px;
-    text-align: center;
-  }
 
 
 
@@ -109,6 +109,12 @@ body{
         background-color: #ff000053; /* Define a cor de fundo para o efeito de hover */
         /* Você também pode adicionar outros estilos, como animações, sombras, etc., para personalizar o efeito de hover conforme desejado */
     
+      }
+
+      .voltar{
+        width: 30px;
+        height: 30px;
+        padding: 10px;
       }
 
       @media(max-width:1920px){

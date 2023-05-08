@@ -4,7 +4,7 @@ import { getDocs, collection, doc, deleteDoc } from "https://www.gstatic.com/fir
 
 let divRegistro = document.getElementById("divRegistro")
 
-const colecao = collection(db, "funcionario")
+const colecao = collection(db, "registro")
 const arrayDocumentos = await getDocs(colecao)
 
 arrayDocumentos.forEach(doc_atual => {
@@ -45,7 +45,7 @@ arrayDocumentos.forEach(doc_atual => {
    
     td4.addEventListener('click', async() => {
 
-        await deleteDoc(doc(db, "funcionario", event.target.id));
+        await deleteDoc(doc(db, "registro", event.target.id));
 
           location.reload();
       });
@@ -58,4 +58,8 @@ arrayDocumentos.forEach(doc_atual => {
     table.append(tr1, tr2)
     registroItem.append(table)
     divRegistro.append(registroItem)
+});
+
+document.getElementById("btn-page1").addEventListener("click", function() {
+  window.history.back();
 });
