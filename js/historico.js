@@ -62,4 +62,5 @@ arrayDocumentos.forEach(doc_atual => {
 
 document.getElementById("btn-page1").addEventListener("click", function() {
   window.history.back();
+  
 });
