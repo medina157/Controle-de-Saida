@@ -26,7 +26,8 @@ body{
     font-weight: bold;
     text-align: center;
     position: relative;
-   
+   width: 10px;
+   left: 600px;
 
  }
 
@@ -115,7 +116,10 @@ body{
         width: 30px;
         height: 30px;
         padding: 10px;
+        cursor: pointer;
       }
+
+  
 
       @media(max-width:1920px){
         .registroItem, td, th{
