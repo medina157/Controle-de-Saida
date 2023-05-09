@@ -1,174 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
-* {
-    margin: 0;
-    border: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
-body {
-    background-image: url(img/zyro-image.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.title{
-    display: block;
-    font-family: "Poppins";
-    font-size: 39px;
-    color: #f58634;
-    line-height: 1.2;
-    text-align: center;
-  }
-
-
-main.container {
-    background: white;
-    min-width: 320px;
-    padding: 2rem;
-    width: 40%;
-    border-radius: 8px;
-    margin-right: 50%;
-    
-
-}
-
-main h2 {
-    font-weight: 600;
-    margin-bottom: 2rem;
-    position: relative;
-    color: orange;
-  
-}
-
-main h2::before {
-    content: '';
-    position: absolute;
-    height: 4px;
-    width: 25px;
-    bottom: 3px;
-    left: 0;
-    border-radius: 8px;
-    background: linear-gradient(45deg, #0026e2, #4a00e0);
-}
-
-form, main {
-    display: flex;
-    flex-direction: column;
-}
-
-.input-field {
-    position: relative;
-}
-
-form .input-field:first-child, main .input-field:first-child {
-    margin-bottom: 1.5rem;
-}
-
-.input-field .underline::before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    bottom: -5px;
-    left: 0;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-
-.input-field .underline::after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    bottom: -5px;
-    left: 0;
-    background: linear-gradient(45deg, #0026e2, #4a00e0);
-    transform: scaleX(0);
-    transition: all .3s ease-in-out;
-    transform-origin: left;
-}
-
-.input-field input:focus ~ .underline::after {
-    transform: scaleX(1);
-}
-
-.input-field input {
-    outline: none;
-    font-size: 0.9rem;
-    color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-}
-
-.input-field input::placeholder {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-form input[type="submit"], main button {
-    margin-top: 2rem;
-    padding: 0.4rem;
-    width: 100%;
-    background: linear-gradient(to left, #4776E6, #8e54e9);
-    cursor: pointer;
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 300;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-form input[type="submit"]:hover {
-    letter-spacing: 0.5px;
-    background: linear-gradient(to right, #4776E6, #8e54e9);
-}
-
-.footer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-}
-
-.footer span {
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 0.8rem;
-    text-align: center;
-}
-
-.footer .social-field {
-    padding: 0.4rem;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    width: 100%;
-    cursor: pointer;
-    margin-top: 1rem;
-}
-
-.footer .social-field a i {
-    margin: 0 0.5rem;
-    width: 15px;
-}
-
-.footer .social-field a {
-    text-decoration: none;
-    color: white;
-}
-
-.footer .social-field.twitter {
-    background: linear-gradient(to right, #56a7f2, #468aca);
-}
-
-.footer .social-field.facebook {
-    background: linear-gradient(to right, #1e3c72, #2a5298);
-}
-
-*/
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 /*
@@ -176,12 +6,12 @@ form input[type="submit"]:hover {
 */
 
 :root {
-    --main-color: #012f9b;
+    --main-color: #f0c9fa;
     --link-color: #666666;
-    --text1: #999999;
-    --highligth-text: #f58634;
-    --input-text: #555555;
-    --white-color: #FFFFFF;
+    --text1: #f8f8f8;
+    --highligth-text: #ffffff;
+    --input-text: #ffffff;
+    --white-color: #0153678a;
     --point-list: #CCCCCC;
     --line-input: #D9D9D9;
   }
@@ -201,15 +31,19 @@ form input[type="submit"]:hover {
 	justify-content: center;
   }
   
-  * {
-      margin: 0px; 
-      padding: 0px; 
-      box-sizing: border-box;      
-  }
+ 
   
+  body{
+    background-image: url(../img/Monitoramento\ de\ atividades.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+  }
   body, html {
       height: 100%;
       font-family: "Poppins";
+     
   }
   
   ul, li {
@@ -271,21 +105,23 @@ form input[type="submit"]:hover {
   }
   
   .container-login {
-    width: 100%;  
-    margin: 0 auto;
-    min-height: 95vh;
+    width: 50%;  
+    margin:220px;
+    min-height: 10vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 15px;
+    padding: 22px;
+    margin-left: 35%;
     background: var(--white-color);  
+    border-radius: 10px;
   }
   
   .wrap-login {
     width: 370px;
     margin-right: 50px;
-    background: var(--white-color);
+   
   }
   
   /*
@@ -295,10 +131,7 @@ form input[type="submit"]:hover {
     width: 100px;
     margin-left: 47%;
   }
-  .barra{
-    background-color: #012f9b;
-    height: 40px;
-  }
+
   
   .login-form {
     width: 100%;
@@ -308,7 +141,7 @@ form input[type="submit"]:hover {
     display: block;
     font-family: "Poppins";
     font-size: 39px;
-    color: #f58634;
+    color: #ffffff;
     line-height: 1.2;
     text-align: center;
   }
@@ -321,6 +154,7 @@ form input[type="submit"]:hover {
     width: 100%;
     position: relative;
     border-bottom: 2px solid var(--line-input);
+    color: black;
   }
   
   .input-form {
@@ -440,7 +274,7 @@ form input[type="submit"]:hover {
   
   a:hover {
       text-decoration: none;
-    color: var(--highligth-text);
+    color: var(--higtexthligth-);
   }
   
   /*
