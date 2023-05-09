@@ -20,20 +20,21 @@ header{
 
 .dashboard {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
     padding: 20px;
-    background-color: #E4E5E4;
-    box-shadow: 2px 2px 2px 2px gray;
-    width: 80%;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 60%;
+    margin-top: 100px;
+    margin-left: 400px;
 
 }
 .card {
-    background-color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     padding: 30px;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px #ccc;
-    border: 1px solid blue;
+    border: 1px solid #015367;
     transition: transform 0.3s ease-in-out;
     
 }
@@ -76,9 +77,9 @@ body{
     background-image: url(../img/2454628\ \(2\).jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    
-    
+    background-attachment: fixed;
     }
+
 
 #time{
     display: flex;
@@ -183,7 +184,8 @@ body{
     left: -350px;
     width: 340px;
     height: 100%;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     z-index: 1;
     transition: all 0.3s ease;
   }
