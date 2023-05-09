@@ -48,10 +48,6 @@ header{
     width: 100%;
 }
 
-.hora{
-text-align:end;
-height: 10px;
-}
 
 .card:hover{
 
@@ -79,65 +75,49 @@ body{
     background-attachment: fixed;
     }
 
-
-#time{
-    display: flex;
-    gap: 40px;
-    color: black;
-    margin-bottom: 3%;
-}
-
-#time .circle{
-    position: relative;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#time .circle svg{
-    position: relative;
-    width: 150px;
-    height: 150px;
-    transform: rotate(270deg);
-}
-
-#time .circle svg circle{
-    width: 100%;
-    height: 100%;
-    fill: transparent;
-    stroke: #191919;
-    stroke-width: 4;
-    transform: translate(5px, 5px);
-}
-
-#time .circle svg circle:nth-child(2){
-    stroke: var(--clr);
-    stroke-dasharray: 440;
-}
-
-#time div{
-    position: absolute;
-    text-align: center;
-    font-weight: 500;
-    font-size: 1.5em;
-}
-
-#time div span{
-    position: absolute;
-    transform: translateX(-50%) translateY(-10px);
-    font-size: 0.35em;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-#time .ap{
-    position: relative;
-    font-size: 1em;
-    transform: translate(-20px);
-}
+    button{
+      position: relative;
+      height: 60px;
+      width: 150px;
+      border: none;
+      outline: none;
+      color: white;
+      background: #111;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 18px;
+      font-family: 'Raleway', sans-serif;
+    }
+    button:before{
+      position: absolute;
+      content: '';
+      top: -2px;
+      left: -2px;
+      height: calc(100% + 4px);
+      width: calc(100% + 4px);
+      border-radius: 5px;
+      z-index: -1;
+      opacity: 0;
+      filter: blur(5px);
+      background: linear-gradient(45deg, #9bd3e3, #334dff, #1a2c80, #0e1a5b, #040f3e, #00051f);  
+      background-size: 400%;
+      transition: opacity .3s ease-in-out;
+      animation: animate 20s linear infinite;
+    }
+    button:hover:before{
+      opacity: 1;
+    }
+    button:hover:active{
+      background: none;
+    }
+    button:hover:active:before{
+      filter: blur(2px);
+    }
+    @keyframes animate {
+      0% { background-position: 0 0; }
+      50% { background-position: 400% 0; }
+      100% { background-position: 0 0; }
+    }
 
 .dot{
     position: absolute;
@@ -183,7 +163,7 @@ body{
     left: -350px;
     width: 340px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.644);
     color: white;
     z-index: 1;
     transition: all 0.3s ease;
