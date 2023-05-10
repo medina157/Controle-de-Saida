@@ -37,6 +37,8 @@
     background-image: url(../img/Monitoramento\ de\ atividades.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    overflow-y: hidden;
 
 
   }

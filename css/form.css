@@ -3,7 +3,7 @@
 :root {
   --main-color: #012f9b;
   --highligth-text: #f58634;
-  --white-color: #FFFFFF;
+  --white-color: #000000;
  
 }
 
@@ -12,21 +12,22 @@
         padding: 0;
         box-sizing: border-box;
         font-family: 'poppins';
-        background-image: url(https://static.vecteezy.com/system/resources/previews/003/557/256/non_2x/abstract-blue-and-orange-wave-business-background-free-vector.jpg);
+        background-image: url(https://getwallpapers.com/wallpaper/full/b/5/d/1157107-popular-black-and-neon-color-wallpaper-2560x1920-for-desktop.jpg);
         background-size: cover;
         background-repeat: no-repeat;
     }
     
     header img{
-       padding: 30px;
+       padding: 20px;
         width: 220px;
-        margin-left: 2%;
-        
+        margin-left: 40%;
+      position: relative;
+      top: 70%;
         
     }
     h2{
       text-align: center;
-      color:#f58634;
+      color:#9BE0E4;
     }
     .container{
         width: 30%;
@@ -48,28 +49,33 @@
   padding: 10px;
   border-radius: 5px;
   font-size: 14px;
+  background-color: #000000;
+  color: #efefef;
+  font-family: 'poppins';
+  
 }
 
 .labelInput{
   pointer-events: none;
-
+ 
   position: absolute;
   margin-top: 5px;
   margin-left: 5px;
-
+  color: #efefef;
   transition: 0.3s;
 }
 
 div input:focus + label, div input:valid + label{
   font-size: 14px;
   margin-top: -10px;
-  background-color: white;
+  background-color: rgb(22, 17, 17);
   padding-left: 5px;
   padding-right: 5px;
+  color: rgb(255, 242, 242);
 }
 
 input[type="text"]:focus, input[type="time"]:focus {
-  border-color: #f58634;
+  border-color: #3a34f5;
   outline: none;
 }
 
@@ -85,7 +91,7 @@ input[type="text"]:focus, input[type="time"]:focus {
   
   font-family: "Poppins";
   font-size: 16px;
-  color: var(--white-color);
+  color: black;
   line-height: 1.2;
   text-transform: uppercase;
   display: flex;
@@ -98,6 +104,7 @@ input[type="text"]:focus, input[type="time"]:focus {
   border-radius: 5px;
   transition: all 0.4s;
   border: none;
+  border-color: #012f9b;
 }
 
 .login-form-btn:hover  {
@@ -208,6 +215,7 @@ input[type="text"]:focus, input[type="time"]:focus {
     padding: 0;
     font-size: inherit;
     font-family: inherit;
+   
   }
   button.learn-more {
     width: 12rem;
@@ -224,6 +232,7 @@ input[type="text"]:focus, input[type="time"]:focus {
     height: 3rem;
     background: #012f9b;
     border-radius: 1.625rem;
+ 
   }
   button.learn-more .circle .icon {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
