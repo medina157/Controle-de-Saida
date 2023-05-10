@@ -27,7 +27,8 @@
     }
     h2{
       text-align: center;
-      color:#9BE0E4;
+      color:#fff;
+      text-shadow: 0 0 10px #9BE0E4;
     }
     .container{
         width: 30%;
