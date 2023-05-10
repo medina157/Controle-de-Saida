@@ -1,47 +1,25 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+	<title>Input de Hora</title>
 </head>
 <body>
-  <p>Pontuação: <span id="pontuacao">0</span></p>
+	<label for="hora">Hora Atual:</label>
+	<input type="time" id="hora">
 
-<ul id="lista-itens"></ul>
-
-
-  <script>
- const listaItens = document.getElementById("lista-itens");
-const pontuacaoSpan = document.getElementById("pontuacao");
-let pontuacao = 0;
-
-const itens = ["Item 1", "Item 2", "Item 3"];
-
-for (let i = 0; i < itens.length; i++) {
-  const li = document.createElement("li");
-  li.textContent = itens[i];
-  
-  const btnExcluir = document.createElement("button");
-  btnExcluir.textContent = "Excluir";
-  btnExcluir.onclick = function() {
-    excluirItem(btnExcluir.parentNode);
-  };
-  
-  li.appendChild(btnExcluir);
-  listaItens.appendChild(li);
-}
-
-function excluirItem(item) {
-  pontuacao += 10; //Adiciona 10 pontos a pontuacao global
-  pontuacaoSpan.innerHTML = pontuacao; //Atualiza a exibição da pontuação no HTML
-  item.remove(); //Remove o item correspondente
-}
+  <style>
+    #hora{
+      user-select: none;
+      pointer-events: none;
+    }
+  </style>
+	<script>
+    const horaAtual = new Date();
+const hora = horaAtual.getHours();
+const minutos = horaAtual.getMinutes();
+const horaInput = document.getElementById('hora');
+horaInput.value = `${hora}:${minutos}`;
 
   </script>
 </body>
 </html>
-
-

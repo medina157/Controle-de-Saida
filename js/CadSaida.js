@@ -73,5 +73,10 @@ document.getElementById("btn-page2").addEventListener("click", function() {
   });
 });
 
+const horaAtual = new Date();
+const hora = horaAtual.getHours();
+const minutos = horaAtual.getMinutes();
+const horaInput = document.getElementById('horario');
+horaInput.value = `${hora}:${minutos}`;
 
 
