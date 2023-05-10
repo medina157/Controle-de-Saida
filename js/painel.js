@@ -91,3 +91,13 @@ closeMenuBtn.addEventListener('click', () => {
 
   document.getElementById("lista-itens").innerHTML = null
 });
+
+function updateTime() {
+	const clockElement = document.getElementById('clock');
+	const currentTime = new Date();
+	const hours = currentTime.getHours();
+	const minutes = currentTime.getMinutes();
+	clockElement.innerText = `${hours}:${minutes}`;
+}
+
+setInterval(updateTime, 1000);

@@ -213,6 +213,15 @@ body{
   border-bottom: 1px solid #ccc;
   line-height: 2;
 }
+
+		.clock {
+			font-size: 2rem;
+			font-weight: bold;
+      color: rgba(255, 255, 255, 0.473);
+      margin-left: 90%;
+      top: 10px;
+      position: fixed;
+		}
   
   @media (max-width: 767px) {
     .menu-container {
