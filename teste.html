@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Input de Hora</title>
-</head>
-<body>
-	<label for="hora">Hora Atual:</label>
-	<input type="time" id="hora">
-
-  <style>
-    #hora{
-      user-select: none;
-      pointer-events: none;
-    }
-  </style>
-	<script>
-    const horaAtual = new Date();
-const hora = horaAtual.getHours();
-const minutos = horaAtual.getMinutes();
-const horaInput = document.getElementById('hora');
-horaInput.value = `${hora}:${minutos}`;
-
-  </script>
-</body>
+  <head>
+    <title>Login Dark</title>
+    <link rel="stylesheet" href="css/teste.css">
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <h1>Login</h1>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </body>
 </html>
+
+
+https://getwallpapers.com/wallpaper/full/b/5/d/1157107-popular-black-and-neon-color-wallpaper-2560x1920-for-desktop.jpg
