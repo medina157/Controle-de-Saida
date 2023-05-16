@@ -40,17 +40,34 @@ arrayDocumentos.forEach(doc_atual => {
     td4.setAttribute("class", "botao-imagem")
     td4.setAttribute("id", doc_atual.id);
 
-    let img = document.createElement("img")
+    let img = document.createElement("img");
+    img.src = "../img/lixeira (1).png";
+    img.setAttribute("id", "openModal");
+    
+    td4.addEventListener('click', async () => {
+      var registroId = event.target.id;
+      var modal = document.getElementById('myModal');
+      modal.setAttribute('data-registro-id', registroId);
+      modal.style.display = 'block';
+    });
 
-   
-    td4.addEventListener('click', async() => {
+    var confirmBtn = document.getElementById('confirmBtn');
 
-        await deleteDoc(doc(db, "registro", event.target.id));
 
-          location.reload();
-      });
-   
-    img.src = "../img/lixeira (1).png"
+    // Excluir o registro ao clicar no botão "Sim"
+confirmBtn.addEventListener('click', async function() {
+  var registroId = modal.getAttribute('data-registro-id');
+  
+  await deleteDoc(doc(db, "registro", registroId));
+
+  // Fecha o modal
+  modal.style.display = 'none';
+  
+  // Recarrega a página ou executa outras ações necessárias
+  location.reload();
+});
+
+    
 
     tr1.append(th1, th2, th3)
     tr2.append(td1, td2, td3, td4)

@@ -1,104 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-/* Estilos para o modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-.modal-buttons {
-  text-align: center;
-}
-
-/* Estilos para os botões */
-.modal-button {
-  margin: 5px;
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.modal-button:hover {
-  background-color: #45a049;
-}
-
-</style>
+  <title>Modal com Botões Sim ou Não</title>
+  <style>
+    /* Estilos para o modal */
+    .modal {
+      display: none; /* Inicialmente oculto */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+    
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .button-container button {
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body>
-
-<!-- Botão para abrir o modal -->
-<button id="openModalBtn">Abrir Modal</button>
-
-<!-- Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Conteúdo do modal -->
-  <div class="modal-content">
-    <h2>Como deseja excluir este item?</h2>
-    <div class="modal-buttons">
-      <button id="penaltyBtn" class="modal-button">Com penalidade</button>
-      <button id="noPenaltyBtn" class="modal-button">Sem penalidade</button>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <h3>Tem certeza de que deseja excluir este registro?</h3>
+      <div class="button-container">
+        <button id="confirmBtn">Sim</button>
+        <button id="cancelBtn">Não</button>
+      </div>
     </div>
   </div>
-
-</div>
-
-<script>
-var openModalBtn = document.getElementById("openModalBtn");
-var penaltyBtn = document.getElementById("penaltyBtn");
-var noPenaltyBtn = document.getElementById("noPenaltyBtn");
-var modal = document.getElementById("myModal");
-
-// Abrir o modal quando o botão for clicado
-openModalBtn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// Fechar o modal quando o botão "Com penalidade" for clicado
-penaltyBtn.onclick = function() {
-  modal.style.display = "none";
-  // Lógica adicional para excluir o item com penalidade
-  console.log("Excluir item com penalidade");
-}
-
-// Fechar o modal quando o botão "Sem penalidade" for clicado
-noPenaltyBtn.onclick = function() {
-  modal.style.display = "none";
-  // Lógica adicional para excluir o item sem penalidade
-  console.log("Excluir item sem penalidade");
-}
-
-// Fechar o modal quando o usuário clicar fora do modal
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
+  
+  <script>
+    // Acessando os elementos
+    var modal = document.getElementById('myModal');
+    var confirmBtn = document.getElementById('confirmBtn');
+    var cancelBtn = document.getElementById('cancelBtn');
+    
+    // Abre o modal ao clicar na imagem
+    document.addEventListener('click', function(event) {
+      if (event.target.classList.contains('delete-image')) {
+        modal.style.display = 'block';
+      }
+    });
+    
+    // Fecha o modal ao clicar no botão "Não"
+    cancelBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+    
+    // Excluir o registro ao clicar no botão "Sim"
+    confirmBtn.addEventListener('click', async function() {
+      var registroId = modal.getAttribute('data-registro-id');
+      
+      // Aqui você pode adicionar a lógica para excluir o registro com o ID "registroId"
+      // Exemplo: await deleteDoc(doc(db, "registro", registroId));
+      
+      // Fecha o modal
+      modal.style.display = 'none';
+      
+      // Recarrega a página ou executa outras ações necessárias
+      location.reload();
+    });
+  </script>
 </body>
 </html>
-
-
-
-https://getwallpapers.com/wallpaper/full/b/5/d/1157107-popular-black-and-neon-color-wallpaper-2560x1920-for-desktop.jpg
