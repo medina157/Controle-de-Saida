@@ -72,7 +72,7 @@ confirmBtn.addEventListener('click', async function() {
 
 
 
-    // Excluir o registro ao clicar no botão "Sim"
+    // Excluir o registro ao clicar no botão "nao"
     cancelBtn.addEventListener('click', async function() {
       var registroId = modal.getAttribute('semponto');
       
