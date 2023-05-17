@@ -52,6 +52,7 @@ arrayDocumentos.forEach(doc_atual => {
     });
 
     var confirmBtn = document.getElementById('confirmBtn');
+    var cancelBtn = document.getElementById('cancelBtn');
 
 
     // Excluir o registro ao clicar no botão "Sim"
@@ -67,6 +68,20 @@ confirmBtn.addEventListener('click', async function() {
   location.reload();
 });
 
+
+
+    // Excluir o registro ao clicar no botão "Sim"
+    cancelBtn.addEventListener('click', async function() {
+      var registroId = modal.getAttribute('apagar');
+      
+      await deleteDoc(doc(db, "registro", registroId));
+    
+      // Fecha o modal
+      modal.style.display = 'none';
+      
+      // Recarrega a página ou executa outras ações necessárias
+      location.reload();
+    });
     
 
     tr1.append(th1, th2, th3)
