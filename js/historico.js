@@ -51,6 +51,7 @@ arrayDocumentos.forEach(doc_atual => {
       modal.style.display = 'block';
     });
 
+    var modal = document.getElementById('myModal');
     var confirmBtn = document.getElementById('confirmBtn');
     var cancelBtn = document.getElementById('cancelBtn');
 
