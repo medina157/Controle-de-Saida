@@ -2,80 +2,64 @@
 <html>
 <head>
   <title>Modal com Botões Sim ou Não</title>
-  <style>
-    /* Estilos para o modal */
-    .modal {
-      display: none; /* Inicialmente oculto */
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-    
-    .modal-content {
-      background-color: #fefefe;
-      margin: 10% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-    }
-    
-    .button-container {
-      text-align: center;
-      margin-top: 20px;
-    }
-    
-    .button-container button {
-      margin-right: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <h3>Tem certeza de que deseja excluir este registro?</h3>
-      <div class="button-container">
-        <button id="confirmBtn">Sim</button>
-        <button id="cancelBtn">Não</button>
-      </div>
-    </div>
-  </div>
   
-  <script>
-    // Acessando os elementos
-    var modal = document.getElementById('myModal');
-    var confirmBtn = document.getElementById('confirmBtn');
-    var cancelBtn = document.getElementById('cancelBtn');
-    
-    // Abre o modal ao clicar na imagem
-    document.addEventListener('click', function(event) {
-      if (event.target.classList.contains('delete-image')) {
-        modal.style.display = 'block';
-      }
-    });
-    
-    // Fecha o modal ao clicar no botão "Não"
-    cancelBtn.addEventListener('click', function() {
-      modal.style.display = 'none';
-    });
-    
-    // Excluir o registro ao clicar no botão "Sim"
-    confirmBtn.addEventListener('click', async function() {
-      var registroId = modal.getAttribute('data-registro-id');
-      
-      // Aqui você pode adicionar a lógica para excluir o registro com o ID "registroId"
-      // Exemplo: await deleteDoc(doc(db, "registro", registroId));
-      
-      // Fecha o modal
-      modal.style.display = 'none';
-      
-      // Recarrega a página ou executa outras ações necessárias
-      location.reload();
-    });
-  </script>
+<script>
+// Obtém a referência ao modal
+var modal = document.getElementById("myModal");
+
+// Obtém a referência ao botão de fechar
+var closeButton = document.getElementsByClassName("close")[0];
+
+// Obtém a referência ao botão de seleção
+var selectButton = document.getElementById("selectButton");
+
+// Define a ação ao clicar no botão de fechar
+closeButton.onclick = function() {
+  modal.style.display = "none";
+};
+
+// Define a ação ao clicar no botão de seleção
+selectButton.onclick = function() {
+  var employeeSelect = document.getElementById("employeeSelect");
+  var selectedValue = employeeSelect.value;
+  
+  if (selectedValue !== "Selecionar...") {
+    console.log("Funcionário selecionado: " + selectedValue);
+    // Faça algo com o valor selecionado
+  } else {
+    console.log("Nenhum funcionário selecionado");
+  }
+};
+
+// Exibe o modal
+modal.style.display = "block";
+
+// Lista de funcionários
+var funcionarios = [
+  "CAIO GARCIA CAPEL",
+  "FERNANDA MENDES DOS SANTOS",
+  "GABRIEL GREGORIO S. FREITAS",
+  "IRINEU ALVES CARDOSO FILHO",
+  "ISAIAS CHIPOCH",
+  "ISABELLY PEREIRA GOMES",
+  "JOSE CARLOS GIARETTA TAVARES",
+  "KAMILLY EVELYN MARTINS",
+  "LUCAS DA SILVA NUNES",
+  "REGIANE KEMITA",
+  "WANDERSON FABRICIO MEDINA RODRIGUES"
+];
+
+// Obtém a referência ao dropdown de funcionários
+var employeeSelect = document.getElementById("employeeSelect");
+
+// Preenche o dropdown com as opções de funcionários
+for (var i = 0; i < funcionarios.length; i++) {
+  var option = document.createElement("option");
+  option.value = funcionarios[i];
+  option.text = funcionarios[i];
+  employeeSelect.appendChild(option);
+}
+
+</script>
 </body>
 </html>

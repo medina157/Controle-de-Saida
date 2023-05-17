@@ -2,6 +2,7 @@
 
 body{
     font-family: 'poppins';
+  
 }
 
  .logo{
@@ -27,7 +28,18 @@ header{
     margin-top: 100px;
     margin-left: 400px;
 
+    
 }
+
+.dashboard::-webkit-scrollbar {
+  width: 5px; /* Define a largura da barra de rolagem */
+  background-color: rgb(7, 77, 77); /* Define a tonalidade escura de fundo */
+}
+
+.dashboard::-webkit-scrollbar-thumb {
+  background-color: rgb(33,206,206); /* Define a tonalidade escura do preenchimento da barra de rolagem */
+}
+
 .card {
   background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -35,6 +47,7 @@ header{
     border-radius: 5px;
     border: 1px solid #015367;
     transition: transform 0.3s ease-in-out;
+    
     
 }
 .card h2 {
