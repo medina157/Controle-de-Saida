@@ -47,7 +47,8 @@ arrayDocumentos.forEach(doc_atual => {
     td4.addEventListener('click', async () => {
       var registroId = event.target.id;
       var modal = document.getElementById('myModal');
-      modal.setAttribute('apagar', registroId);
+      modal.setAttribute('componto', registroId);
+      modal.setAttribute('semponto', registroId);
       modal.style.display = 'block';
     });
 
@@ -58,7 +59,7 @@ arrayDocumentos.forEach(doc_atual => {
 
     // Excluir o registro ao clicar no botão "Sim"
 confirmBtn.addEventListener('click', async function() {
-  var registroId = modal.getAttribute('apagar');
+  var registroId = modal.getAttribute('componto');
   
   await deleteDoc(doc(db, "registro", registroId));
 
@@ -73,7 +74,7 @@ confirmBtn.addEventListener('click', async function() {
 
     // Excluir o registro ao clicar no botão "Sim"
     cancelBtn.addEventListener('click', async function() {
-      var registroId = modal.getAttribute('apagar');
+      var registroId = modal.getAttribute('semponto');
       
       await deleteDoc(doc(db, "registro", registroId));
     
