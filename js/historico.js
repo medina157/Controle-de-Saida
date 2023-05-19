@@ -1,6 +1,6 @@
 import { db } from "../js/firebase.js";
 
-import { updateDoc, getDocs, collection, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { updateDoc, getDocs, collection, doc, deleteDoc,setDoc} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 let divRegistro = document.getElementById("divRegistro")
 
@@ -64,17 +64,16 @@ arrayDocumentos.forEach(doc_atual => {
 
     // Excluir o registro ao clicar no botão "Sim"
 confirmBtn.addEventListener('click', async function() {
-  var registroId = modal.getAttribute('componto');
+ // var registroId = modal.getAttribute('componto');
   
-  await deleteDoc(doc(db, "registro", registroId));
+ // await deleteDoc(doc(db, "registro", registroId));
 
   // Fecha o modal
   modal.style.display = 'none';
    
-  const funcionario = doc(db, "funcionario", doc_atual.id);
   
-  await updateDoc(funcionario, {
-    pontos: funcionario.get("pontos") + 1
+  await updateDoc(doc_atual, {
+    deleted: true
   });
 
   // Recarrega a página ou executa outras ações necessárias
@@ -85,9 +84,9 @@ confirmBtn.addEventListener('click', async function() {
 
     // Excluir o registro ao clicar no botão "nao"
     cancelBtn.addEventListener('click', async function() {
-      var registroId = modal.getAttribute('semponto');
+     // var registroId = modal.getAttribute('semponto');
       
-      await deleteDoc(doc(db, "registro", registroId));
+      //await deleteDoc(doc(db, "registro", registroId));
     
       // Fecha o modal
       modal.style.display = 'none';

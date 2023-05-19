@@ -1,8 +1,9 @@
 import {db} from "../js/firebase.js"
 
-import { addDoc, collection } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"
+import { setDoc, collection, doc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"
 
 document.getElementById("registrarsaida").addEventListener("click", function(){
+    let RE = document.getElementById("RE").value
     let nomefuncionario = document.getElementById("nome").value
     let departamento = document.getElementById("departamento").value
     let horario = document.getElementById("horario").value
@@ -16,10 +17,12 @@ document.getElementById("registrarsaida").addEventListener("click", function(){
 
      //   })
 
-    addDoc(collection(db, "registro"), {
+    setDoc(doc(db, "registro",RE), {
         nome: nomefuncionario, 
         departamento: departamento,
-        hora:horario
+        hora:horario,
+        RE:RE,
+        pontos:""
     });
 
     
