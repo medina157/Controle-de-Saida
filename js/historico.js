@@ -1,6 +1,6 @@
 import { db } from "../js/firebase.js";
 
-import { getDocs, collection, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { updateDoc, getDocs, collection, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 let divRegistro = document.getElementById("divRegistro")
 
@@ -43,13 +43,18 @@ arrayDocumentos.forEach(doc_atual => {
     let img = document.createElement("img");
     img.src = "../img/lixeira (1).png";
     img.setAttribute("id", "openModal");
+
+    let idfuncionario = document.createElement("input")
+    idfuncionario.setAttribute("class", "idfuncionario")
+    idfuncionario.setAttribute("value", doc_atual.id)
     
     td4.addEventListener('click', async () => {
       var registroId = event.target.id;
       var modal = document.getElementById('myModal');
-      modal.setAttribute('componto', registroId);
+      modal.setAttribute('componto', registroId); 
       modal.setAttribute('semponto', registroId);
       modal.style.display = 'block';
+
     });
 
     var modal = document.getElementById('myModal');
@@ -65,7 +70,13 @@ confirmBtn.addEventListener('click', async function() {
 
   // Fecha o modal
   modal.style.display = 'none';
+   
+  const funcionario = doc(db, "funcionario", doc_atual.id);
   
+  await updateDoc(funcionario, {
+    pontos: funcionario.get("pontos") + 1
+  });
+
   // Recarrega a página ou executa outras ações necessárias
   location.reload();
 });
@@ -90,7 +101,7 @@ confirmBtn.addEventListener('click', async function() {
     tr2.append(td1, td2, td3, td4)
     td4.append(img)
     table.append(tr1, tr2)
-    registroItem.append(table)
+    registroItem.append(table, idfuncionario)
     divRegistro.append(registroItem)
 });
 
