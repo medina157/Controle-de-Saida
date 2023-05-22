@@ -270,10 +270,8 @@ input[type="text"]:focus, input[type="time"]:focus {
   button.learn-more .button-text {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+ 
+    margin-bottom: 0;
     padding: 0.75rem 0;
     margin: 0 0 0 1.85rem;
     color: #282936;
