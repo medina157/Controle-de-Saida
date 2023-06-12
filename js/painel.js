@@ -73,6 +73,7 @@ openMenuBtn.addEventListener('click', async () => {
   const arrayDocumentos = await getDocs(colecao)
 
   arrayDocumentos.forEach((doc) => {
+    if(doc.get("pontos") > 0){   
     let li = document.createElement("li")
     let spanNome = document.createElement("span")
     spanNome.innerHTML = doc.get("nome")
@@ -82,7 +83,8 @@ openMenuBtn.addEventListener('click', async () => {
 
     li.append(spanNome, spanPontos)
 
-    listaItens.append(li)
+    listaItens.append(li)}
+
   })
 
 });

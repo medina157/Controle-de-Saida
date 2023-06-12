@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"
+import { getFirestore} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"
 
  // Your web app's Firebase configuration
  const firebaseConfig = {

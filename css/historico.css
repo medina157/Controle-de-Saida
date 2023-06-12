@@ -123,11 +123,9 @@ body{
         cursor: pointer;
       }
 
-<<<<<<< HEAD
   /* Estilos para o modal */
-=======
   /*   /* Estilos para o modal */
->>>>>>> 3c38352d6f4670ea221c742d71b2d4ad786f34be
+
   .modal {
     display: none;
     position: fixed;
@@ -135,7 +133,6 @@ body{
     left: 0;
     top: 0;
     width: 100%;
-<<<<<<< HEAD
     
     overflow: auto;
   }
@@ -154,12 +151,6 @@ body{
   
  
   /*===========================================================*/
-=======
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.247);
-    
-  }
   
   .modal-content {
     background-color: #000000;
@@ -198,7 +189,6 @@ body{
 }
   /*================================================================================================================*/
 
->>>>>>> 3c38352d6f4670ea221c742d71b2d4ad786f34be
 
       @media(max-width:1920px){
         .registroItem, td, th{

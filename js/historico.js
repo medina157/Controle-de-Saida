@@ -1,6 +1,8 @@
 import { db } from "../js/firebase.js";
 
-import { updateDoc, getDocs, collection, doc, deleteDoc,setDoc} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import {getDocs, collection, query, where} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+
+
 
 let divRegistro = document.getElementById("divRegistro")
 
@@ -28,8 +30,6 @@ arrayDocumentos.forEach(doc_atual => {
     let td1 = document.createElement("td")
     td1.innerHTML = doc_atual.get("nome")
 
-
-
     let td2 = document.createElement("td")
     td2.innerHTML = doc_atual.get("departamento")
 
@@ -47,9 +47,9 @@ arrayDocumentos.forEach(doc_atual => {
     let idfuncionario = document.createElement("input")
     idfuncionario.setAttribute("class", "idfuncionario")
     idfuncionario.setAttribute("value", doc_atual.id)
-    
+    var registroId = ""
     td4.addEventListener('click', async () => {
-      var registroId = event.target.id;
+      registroId = event.target.id;
       var modal = document.getElementById('myModal');
       modal.setAttribute('componto', registroId); 
       modal.setAttribute('semponto', registroId);
@@ -60,26 +60,25 @@ arrayDocumentos.forEach(doc_atual => {
     var modal = document.getElementById('myModal');
     var confirmBtn = document.getElementById('confirmBtn');
     var cancelBtn = document.getElementById('cancelBtn');
+    var pontos = ""
 
-    // Excluir o registro ao clicar no botão "Sim"
-confirmBtn.addEventListener('click', async function() {
- // var registroId = modal.getAttribute('componto');
-  
- // await deleteDoc(doc(db, "registro", registroId));
+  confirmBtn.addEventListener('click', async function() {
+    console.log(registroId)
+    const q = query(collection(db, "registro"), where("RE", "==", registroId))
+    const querySnapshot = await getDocs(q)
+    querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    pontos = doc.get("pontos")
+    await updateDoc (doc{
+        
+    })
+  });
 
   // Fecha o modal
   modal.style.display = 'none';
-   
-  
-  await updateDoc(doc_atual, {
-    deleted: true
-  });
 
   // Recarrega a página ou executa outras ações necessárias
-  location.reload();
 });
-
-
 
     // Excluir o registro ao clicar no botão "nao"
     cancelBtn.addEventListener('click', async function() {
