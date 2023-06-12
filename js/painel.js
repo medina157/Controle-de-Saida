@@ -68,7 +68,8 @@ openMenuBtn.addEventListener('click', async () => {
 
   let listaItens = document.getElementById("lista-itens")
 
-  const colecao = collection(db, "funcionario")
+
+  const colecao = collection(db, "registro")
   const arrayDocumentos = await getDocs(colecao)
 
   arrayDocumentos.forEach((doc) => {

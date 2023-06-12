@@ -70,7 +70,7 @@ body{
   
 }
 
-    
+
     .registroItem:hover{
         box-shadow: 1px 0px 10px rgb(33, 206, 206);
     }
@@ -92,6 +92,7 @@ body{
         right: 30px;
         border-radius: 30%;
         cursor: pointer;
+        margin-top: -30px;
 
       }
       
@@ -122,7 +123,11 @@ body{
         cursor: pointer;
       }
 
+<<<<<<< HEAD
   /* Estilos para o modal */
+=======
+  /*   /* Estilos para o modal */
+>>>>>>> 3c38352d6f4670ea221c742d71b2d4ad786f34be
   .modal {
     display: none;
     position: fixed;
@@ -130,6 +135,7 @@ body{
     left: 0;
     top: 0;
     width: 100%;
+<<<<<<< HEAD
     
     overflow: auto;
   }
@@ -148,6 +154,51 @@ body{
   
  
   /*===========================================================*/
+=======
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.247);
+    
+  }
+  
+  .modal-content {
+    background-color: #000000;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  h3{
+    color: white;
+    text-align: center;
+    margin-top: -20px;
+  }
+
+  #confirmBtn{
+  background-color: rgba(0, 255, 179, 0.719);
+  color: white ;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 10px 60px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 300px;
+}
+
+  #cancelBtn {
+  background-color: rgba(255, 0, 0, 0.726);
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 10px 60px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 160px;
+}
+  /*================================================================================================================*/
+
+>>>>>>> 3c38352d6f4670ea221c742d71b2d4ad786f34be
 
       @media(max-width:1920px){
         .registroItem, td, th{
