@@ -122,7 +122,32 @@ body{
         cursor: pointer;
       }
 
+  /* Estilos para o modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    
+    overflow: auto;
+  }
+  h3{ 
+    color: #040303;
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid rgb(0, 255, 221);
+    width: 90%; 
+  }
+
   
+  
+ 
+  /*===========================================================*/
 
       @media(max-width:1920px){
         .registroItem, td, th{

@@ -51,9 +51,9 @@ arrayDocumentos.forEach(doc_atual => {
       modal.style.display = 'block';
     });
 
+    var modal = document.getElementById('myModal');
     var confirmBtn = document.getElementById('confirmBtn');
     var cancelBtn = document.getElementById('cancelBtn');
-
 
     // Excluir o registro ao clicar no botão "Sim"
 confirmBtn.addEventListener('click', async function() {
